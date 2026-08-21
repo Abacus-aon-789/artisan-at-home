@@ -18,6 +18,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Cormorant+Garamond:wght@500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css">
+<style>
+html.intro-seen .hr-panels { opacity: 1 !important; }
+html.intro-seen .hr-logo, html.intro-seen .scroll-cue { opacity: 0 !important; }
+</style>
+<script>
+/* Show the big "A" intro only on the first visit of the day */
+try {
+  var _today = new Date().toISOString().slice(0, 10);
+  if (localStorage.getItem('aah_intro_day') === _today) {
+    document.documentElement.className += ' intro-seen';
+  } else {
+    localStorage.setItem('aah_intro_day', _today);
+  }
+} catch (e) {}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -145,16 +160,22 @@
   var cue = hero.querySelector('.scroll-cue');
   var panels = hero.querySelector('.hr-panels');
   var nav = document.querySelector('.hero-nav');
-  var logoGone = false;
+  var logoGone = document.documentElement.classList.contains('intro-seen');
   function onScroll() {
     var total = hero.offsetHeight - window.innerHeight;
     var prog = total > 0 ? Math.min(1, Math.max(0, -hero.getBoundingClientRect().top / total)) : 0;
     if (prog >= 1) logoGone = true;
-    var base = logoGone ? 0.5 : 0.15;
-    panels.style.opacity = (base + prog * (1 - base)).toFixed(3);
-    logo.style.opacity = logoGone ? '0' : Math.max(0, 1 - prog * 1.5).toFixed(3);
-    if (cue) cue.style.opacity = logoGone ? '0' : Math.max(0, 1 - prog * 2).toFixed(3);
-    if (nav) nav.classList.toggle('scrolled', logoGone || prog > 0.5);
+    if (logoGone) {
+      panels.style.opacity = 1;
+      logo.style.opacity = '0';
+      if (cue) cue.style.opacity = '0';
+      if (nav) nav.classList.add('scrolled');
+      return;
+    }
+    panels.style.opacity = (0.15 + prog * 0.85).toFixed(3);
+    logo.style.opacity = Math.max(0, 1 - prog * 1.5).toFixed(3);
+    if (cue) cue.style.opacity = Math.max(0, 1 - prog * 2).toFixed(3);
+    if (nav) nav.classList.toggle('scrolled', prog > 0.5);
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
