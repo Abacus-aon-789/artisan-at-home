@@ -593,7 +593,7 @@ h1 em, h2 em, h3 em { font-style: normal; font-weight: 600; color: var(--pine); 
 .hn-sub { position: absolute; top: 100%; left: 0; margin-top: 0; background: var(--cream); border: 1px solid var(--line); border-top: none; padding: 0.2rem 0; min-width: 100%; width: max-content; opacity: 0; visibility: hidden; transition: opacity 0.18s ease; z-index: 3; }
 .hn-has-sub::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 12px; }
 .hn-has-sub:hover .hn-sub, .hn-has-sub:focus-within .hn-sub { opacity: 1; visibility: visible; }
-.hn-sub a { display: block; text-align: center; padding: 0.5rem 0.9rem; font-size: 0.96rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pine) !important; opacity: 0.9 !important; text-shadow: none !important; white-space: nowrap; }
+.hn-sub a { display: block; text-align: left; padding: 0.5rem 0.9rem; font-size: 0.96rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pine) !important; opacity: 0.9 !important; text-shadow: none !important; white-space: nowrap; }
 .hn-sub a:hover { background: #fff; color: var(--honey) !important; opacity: 1 !important; }
 
 /* Photo with a semi-transparent readable panel over it */
@@ -626,3 +626,7 @@ h1 em, h2 em, h3 em { font-style: normal; font-weight: 600; color: var(--pine); 
 .site-footer .footer-logo img { height: 118px; margin: 0; }
 .footer-grid { margin: 0; }
 @media (max-width: 640px) { .site-footer .wrap { flex-direction: column; gap: 1.6rem; } }
+
+/* Nested "Order Now" under Corporate Catering in the Services dropdown */
+.hn-sub .hn-sub-child { padding-left: 1.9rem; font-size: 0.8rem !important; opacity: 0.72 !important; }
+.menu-panel .mob-child a { padding-left: 2.3rem; opacity: 0.8; }
