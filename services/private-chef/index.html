@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Private Chef Experience Auckland | Artisan at Home</title>
+<meta name="description" content="Private chef and in-home dining across Auckland &amp; Northland. Restaurant-quality plated dinners and generous shared tables, cooked in your own kitchen by Jake &amp; Abi. Enquire today.">
+<link rel="canonical" href="https://artisanathome.nz/services/private-chef/">
+<meta property="og:title" content="Private Chef Experience Auckland | Artisan at Home">
+<meta property="og:description" content="Restaurant-standard private dining in your own home. Bespoke degustation dinners and shared table feasts across Auckland and Northland.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://artisanathome.nz/services/private-chef/">
+<meta property="og:image" content="https://artisanathome.nz/images/og-image.png">
+<meta property="og:site_name" content="Artisan at Home">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Cormorant+Garamond:wght@500;600;700&family=Playfair+Display:wght@500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Private Chef Experience",
+  "serviceType": "Private chef and in-home dining",
+  "url": "https://artisanathome.nz/services/private-chef/",
+  "areaServed": ["Auckland", "Northland"],
+  "description": "In-home private chef dining across Auckland & Northland — plated multi-course dinners and generous shared tables, cooked in your own kitchen by Jake & Abi.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "@id": "https://artisanathome.nz/#business",
+    "name": "Artisan at Home",
+    "url": "https://artisanathome.nz/",
+    "telephone": "+64275723373",
+    "email": "hello@artisanathome.nz",
+    "areaServed": ["Auckland", "Northland"]
+  }
+}
+</script>
+<style>
+/* ---------- Private Chef page ---------- */
+body { background: #fff; }
+/* Hero: photo banner + intro (voice) */
+.page-hero--slim { min-height: 46vh; align-items: center; }
+.page-hero .wrap { text-align: center; }
+.page-hero h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 700; letter-spacing: 0.01em; text-shadow: 0 2px 26px rgba(31,51,32,0.5); }
+.pc-intro { background: #fff; padding: clamp(2.4rem, 5vw, 4rem) 0; }
+.pc-intro-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.pc-tagline { font-family: 'Playfair Display', serif; font-size: clamp(2.1rem, 4.4vw, 3rem); color: var(--pine); line-height: 1; margin-bottom: 1.3rem; }
+.pc-intro .lead { margin: 0 0 1.4rem; }
+.pc-intro .btn-row { margin-top: 0; }
+.pc-intro-photo { position: relative; overflow: hidden; border-radius: 3px; aspect-ratio: 4 / 4.2; }
+.pc-intro-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (max-width: 820px) { .pc-intro-grid { grid-template-columns: 1fr; } .pc-intro-photo { order: -1; min-height: 280px; aspect-ratio: 4 / 3; } }
+
+/* Menu examples carousel */
+.menu-carousel { background: var(--cream); }
+.mc-stage { position: relative; display: flex; align-items: center; justify-content: center; }
+.mc-img { max-width: min(100%, 560px); max-height: 78vh; box-shadow: 0 18px 44px rgba(31,51,32,0.16); background: #fff; }
+.mc-nav { position: absolute; top: 50%; transform: translateY(-50%); background: var(--pine); color: #fff; border: none; width: 46px; height: 46px; border-radius: 50%; font-size: 1.8rem; cursor: pointer; display: grid; place-items: center; }
+.mc-nav:hover { background: var(--pine-deep); }
+.mc-prev { left: 0; }
+.mc-next { right: 0; }
+.mc-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1.2rem; }
+.mc-dots button { width: 9px; height: 9px; border-radius: 50%; border: none; background: rgba(47,74,47,0.25); cursor: pointer; padding: 0; }
+.mc-dots button.active { background: var(--pine); }
+@media (max-width: 600px) { .mc-nav { width: 38px; height: 38px; font-size: 1.4rem; } }
+
+/* Four pictures across */
+.pics-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+.pics-cell { aspect-ratio: 1 / 1; position: relative; overflow: hidden; }
+.pics-cell img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (max-width: 700px) { .pics-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* Bespoke note */
+.bespoke { background: #fff; padding: 0 0 clamp(2.5rem, 6vw, 4rem); text-align: center; }
+.bespoke .wrap { max-width: 44rem; }
+.bespoke p { font-size: 1.12rem; line-height: 1.75; }
+
+/* Dining styles — two photo cards side by side */
+.dining-styles { background: var(--cream); }
+.dish-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.4rem, 3vw, 2.4rem); }
+.dish-card { background: #fff; border: 1px solid var(--line); display: flex; flex-direction: column; }
+.dish-photo { width: 100%; aspect-ratio: 4 / 3; position: relative; overflow: hidden; }
+.dish-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.dish-body { padding: clamp(1.6rem, 3vw, 2.5rem); display: flex; flex-direction: column; flex: 1; }
+.dish-body h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); margin-bottom: 1rem; }
+.dish-meta { font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(34,40,31,0.58); line-height: 1.95; margin: 0; }
+.dish-rule { display: block; width: 2.6rem; height: 2px; background: var(--honey); margin: 1.1rem 0 1.3rem; }
+.dish-body > p:not(.dish-meta) { color: rgba(34,40,31,0.8); line-height: 1.7; margin: 0 0 1.4rem; }
+.dish-actions { margin-top: auto; padding-top: 1.4rem; border-top: 1px solid var(--line); display: flex; gap: 0.8rem; }
+.dish-actions .btn { flex: 1; text-align: center; font-size: 0.72rem; padding: 0.95rem 0.5rem; letter-spacing: 0.18em; }
+@media (max-width: 760px) { .dish-grid { grid-template-columns: 1fr; } .dish-photo { aspect-ratio: 4 / 3; } }
+@media (max-width: 420px) { .dish-actions { flex-direction: column; } }
+
+/* How it works — photo + numbered steps */
+.pc-steps { background: #fff; }
+.hiw-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.hiw-photo { position: relative; overflow: hidden; border-radius: 3px; aspect-ratio: 3 / 4; }
+.hiw-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.hiw-copy h2 { font-size: clamp(1.9rem, 4vw, 2.7rem); line-height: 1.1; margin: 0.3rem 0 0; }
+.hiw-rule { display: block; width: 3rem; height: 2px; background: var(--honey); margin: 1.1rem 0 1.8rem; }
+.hiw-steps { display: flex; flex-direction: column; gap: 1rem; }
+.hiw-step { background: var(--cream); border: 1px solid var(--line); padding: 1.3rem 1.6rem; display: grid; grid-template-columns: 2.6rem 1fr; gap: 0.5rem; align-items: start; }
+.hiw-num { font-family: var(--serif); font-size: 1.35rem; color: rgba(47,74,47,0.45); line-height: 1.5; }
+.hiw-step h3 { font-size: 1.3rem; margin-bottom: 0.35rem; }
+.hiw-step p { font-size: 0.95rem; color: rgba(34,40,31,0.75); margin: 0; line-height: 1.6; }
+@media (max-width: 820px) { .hiw-grid { grid-template-columns: 1fr; } .hiw-photo { order: -1; min-height: 300px; aspect-ratio: 4 / 3; } }
+.recipe-card-wrap { display: flex; justify-content: center; }
+.recipe-card {
+  position: relative;
+  width: min(100%, 40rem);
+  padding: 2.15rem 2.4rem 2rem;
+  border: 1px solid rgba(120,92,52,0.38);
+  border-radius: 5px;
+  box-shadow: 0 22px 50px rgba(31,51,32,0.16);
+  transform: rotate(-1deg);
+  background-color: #f4ecd6;
+  background-image:
+    repeating-linear-gradient(to bottom, transparent 0, transparent calc(2.6rem - 1px), rgba(70,110,150,0.28) calc(2.6rem - 1px), rgba(70,110,150,0.28) 2.6rem),
+    radial-gradient(135% 100% at 88% 12%, rgba(150,110,60,0.13), transparent 55%);
+  background-position: 0 2.15rem, 0 0;
+  background-repeat: repeat, no-repeat;
+}
+.rc-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; height: 2.6rem; }
+.rc-title { font-family: 'Caveat', cursive; font-weight: 700; font-size: 2.5rem; line-height: 1; color: #2f4a2f; }
+.rc-note { font-family: 'Caveat', cursive; font-size: 1.5rem; line-height: 1; color: #a8823f; white-space: nowrap; }
+.rc-steps { list-style: none; margin: 1.3rem 0 0; padding: 0; }
+.rc-steps li { font-family: 'Caveat', cursive; font-size: 1.62rem; line-height: 2.6rem; color: #2a3446; margin: 0; }
+.rc-n { color: #2f4a2f; font-weight: 700; margin-right: 0.15rem; }
+.rc-k { color: #2f4a2f; font-weight: 700; }
+@media (max-width: 620px) {
+  .recipe-card { transform: none; padding: 1.6rem 1.4rem; }
+  .rc-title { font-size: 2.1rem; }
+  .rc-steps li { font-size: 1.46rem; }
+}
+@media (prefers-reduced-motion: reduce) { .recipe-card { transform: none; } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="hero-nav hero-nav--bar" aria-label="Primary">
+  <div class="hn-group">
+    <span class="hn-has-sub">
+      <a href="/services/">Services</a>
+      <span class="hn-sub">
+        <a href="/services/private-chef/">Private Chef</a>
+        <a href="/services/wedding-catering/">Wedding Catering</a>
+        <a href="/services/event-catering/">Event Catering</a>
+        <a href="/services/corporate-catering/">Corporate Catering</a>
+      </span>
+    </span>
+    <a href="/menus/">Menus</a>
+  </div>
+  <a class="hn-logo" href="/" aria-label="Artisan at Home — home"><img src="/images/logo-mark.png" alt="Artisan at Home"></a>
+  <div class="hn-group">
+    <a href="/our-story/">Our Story</a>
+    <a href="/contact-us/">Contact Us</a>
+  </div>
+</nav>
+<div class="menu-wrap">
+  <button class="menu-fab" id="menuFab" aria-label="Open menu" aria-expanded="false" aria-controls="navOverlay">+</button>
+  <nav class="menu-panel" id="navOverlay" aria-label="Main" aria-hidden="true">
+    <ul>
+      <li><a href="/services/private-chef/">Private Chef</a></li>
+      <li><a href="/services/wedding-catering/">Wedding Catering</a></li>
+      <li><a href="/services/event-catering/">Event Catering</a></li>
+      <li><a href="/services/corporate-catering/">Corporate Catering</a></li>
+      <li><a href="/menus/">Menus</a></li>
+      <li><a href="/our-story/">Our Story</a></li>
+      <li><a href="/contact-us/">Contact Us</a></li>
+    </ul>
+  </nav>
+</div>
+<main id="content">
+
+<section class="page-hero page-hero--slim" style="background-image: url('/images/private-chef/Fine-dining-dish-2.png');">
+  <div class="wrap">
+    <h1>Private Chef Experience</h1>
+  </div>
+</section>
+
+<section class="pc-intro">
+  <div class="wrap pc-intro-grid">
+    <div class="pc-intro-copy">
+      <p class="pc-tagline">Staying in, is the new going out.</p>
+      <p class="lead">We're Jake &amp; Abi, your private chef and front of house duo that brings the restaurant to you, anywhere across Auckland &amp; Northland.</p>
+      <p class="lead">Think restaurant quality dinners, cooked in your own kitchen, just how you like it.</p>
+      <p class="lead">Whether it's an intimate plated dinner, or a generous shared table, there is no shopping, chopping or mopping you have to do. Enjoy the luxury of being a guest at your own dinner party - you stay in the conversation, we'll handle the rest (dishes included!).</p>
+      <div class="btn-row">
+        <a class="btn btn--solid" href="/contact-us/">Start the conversation</a>
+      </div>
+    </div>
+    <div class="pc-intro-photo"><img src="/images/private-chef/private-chef-table.png" alt="An elegantly set private dining table for a private chef dinner in Auckland" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="section dining-styles" id="dining">
+  <div class="wrap">
+    <div class="dish-grid">
+      <article class="dish-card">
+        <div class="dish-photo"><img src="/images/private-chef/pasta-dish.jpg" alt="A plated tasting-menu course by private chef Jake" loading="lazy"></div>
+        <div class="dish-body">
+          <h2>The <em>Plated Experience</em></h2>
+          <p class="dish-meta">Minimum 8 guests<br>3 to 5 courses</p>
+          <span class="dish-rule"></span>
+          <p>A 3-5 course tasting menu designed by Jake, plated and served course by course. It's the full degustation treatment: a special way to celebrate a milestone, spoil your guests, or simply treat yourselves.</p>
+          <div class="dish-actions">
+            <a class="btn btn--solid" href="/contact-us/">Enquire Now</a>
+            <a class="btn" href="#example-menus" data-menu="0">Example Menus</a>
+          </div>
+        </div>
+      </article>
+      <article class="dish-card">
+        <div class="dish-photo"><img src="/images/private-chef/shared-table.png" alt="A shared table feast of generous platters" loading="lazy" style="object-position: center 42%;"></div>
+        <div class="dish-body">
+          <h2>The <em>Shared Table</em></h2>
+          <p class="dish-meta">From 8 guests<br>Shared platters</p>
+          <span class="dish-rule"></span>
+          <p>We're big believers that great food is meant to be savoured and shared with your favourite people, and this dining style does exactly that. Vibrant, abundant platters passed around the table, naturally invoking conversation and connection.</p>
+          <div class="dish-actions">
+            <a class="btn btn--solid" href="/contact-us/">Enquire Now</a>
+            <a class="btn" href="#example-menus" data-menu="1">Example Menus</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section menu-carousel" id="example-menus">
+  <div class="wrap">
+    <div class="section-head section-head--center">
+      <h2>Example <em>Menus</em></h2>
+      <p>A taste of how an evening might look. Every menu is designed around you, your guests and the season.</p>
+    </div>
+    <div class="mc-stage">
+      <button class="mc-nav mc-prev" id="mcPrev" aria-label="Previous menu">&#8249;</button>
+      <img class="mc-img" id="mcImg" src="/images/menus/plated-menu.jpg" alt="Example plated menu">
+      <button class="mc-nav mc-next" id="mcNext" aria-label="Next menu">&#8250;</button>
+    </div>
+    <div class="mc-dots" id="mcDots"></div>
+  </div>
+</section>
+
+<section class="pics-strip" aria-label="A few dishes from our table">
+  <div class="pics-grid">
+    <div class="pics-cell"><img src="/images/private-chef/focaccia.jpg" alt="House-made focaccia" loading="lazy"></div>
+    <div class="pics-cell"><img src="/images/private-chef/jake-plated-dish.jpg" alt="Jake with a plated fine-dining dish" loading="lazy"></div>
+    <div class="pics-cell"><img src="/images/private-chef/oysters.jpeg" alt="Freshly shucked oysters" loading="lazy"></div>
+    <div class="pics-cell"><img src="/images/private-chef/private-chef-prep.jpg" alt="Private chef prep in the kitchen" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="section pc-steps" id="steps-to-book">
+  <div class="wrap">
+    <div class="hiw-grid">
+      <div class="hiw-photo"><img src="/images/private-chef/jake-plating.png" alt="Private chef Jake plating a dinner at home" loading="lazy"></div>
+      <div class="hiw-copy">
+        <span class="eyebrow">How It Works</span>
+        <h2>Booking a private chef in Auckland <em>couldn't be easier.</em></h2>
+        <span class="hiw-rule"></span>
+        <div class="hiw-steps">
+          <div class="hiw-step">
+            <span class="hiw-num">01</span>
+            <div>
+              <h3>Enquire</h3>
+              <p>Share your date, guest count, and any dietary preferences through our simple enquiry form. We provide private chef services across Auckland and the greater North, from Clevedon to Mangawhai.</p>
+            </div>
+          </div>
+          <div class="hiw-step">
+            <span class="hiw-num">02</span>
+            <div>
+              <h3>Consult</h3>
+              <p>We talk about what you want, any favourite dishes or inspiration, and curate a bespoke seasonal menu tailored to your occasion and guests. Once you're happy with the menu, we request a 30% deposit to secure the date.</p>
+            </div>
+          </div>
+          <div class="hiw-step">
+            <span class="hiw-num">03</span>
+            <div>
+              <h3>Enjoy</h3>
+              <p>We arrive with fresh ingredients, cook, serve, and leave your kitchen spotless. You simply show up to your own table and enjoy the evening with your guests.</p>
+            </div>
+          </div>
+        </div>
+        <div class="btn-row"><a class="btn btn--solid" href="/contact-us/">Enquire Now</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="wrap">
+    <div class="section-head section-head--center">
+      <h2>Frequently <em>asked questions</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><h3 style="margin:0;"><button class="faq-q" aria-expanded="false">Where do you cook?</button></h3><div class="faq-a"><p>We do a lot of the prep off-site, then finish the prep and cooking at your place. All we ask for is some bench space and access to a working oven and hob &mdash; we bring everything else, cook it all there, and leave your kitchen just as we found it.</p></div></div>
+      <div class="faq-item"><h3 style="margin:0;"><button class="faq-q" aria-expanded="false">How many guests do you cook for?</button></h3><div class="faq-a"><p>Our private chef dinners are designed for 8 or more, whether that's an intimate plated tasting menu or a generous shared table. If you're dreaming up something bigger, even better.</p></div></div>
+      <div class="faq-item"><h3 style="margin:0;"><button class="faq-q" aria-expanded="false">Can you work around dietaries and allergies?</button></h3><div class="faq-a"><p>Always. Tell us who's coming and what they can and can't eat, and we'll build the menu around it &mdash; we design the evening so those with dietaries never feel like an afterthought at the table.</p></div></div>
+      <div class="faq-item"><h3 style="margin:0;"><button class="faq-q" aria-expanded="false">Do we choose from a set menu?</button></h3><div class="faq-a"><p>Yes and no &mdash; it's up to you. Jake designs rotating menus with the seasons and the best produce in mind. Most clients like a bit of direction and then tweak the menu to their tastes; but if you arrive with a clear idea of what you'd love, we'll shape your menu together from there.</p></div></div>
+      <div class="faq-item"><h3 style="margin:0;"><button class="faq-q" aria-expanded="false">How do we lock in a date?</button></h3><div class="faq-a"><p>Start with a conversation &mdash; tell us what you're picturing and we'll take it from there. Once we've settled on a menu, we request a 30% deposit to secure your date. Weekends and December fill up fast, so the earlier you reach out the better.</p></div></div>
+      <div class="faq-item"><h3 style="margin:0;"><button class="faq-q" aria-expanded="false">Do you provide the plates, cutlery and glassware?</button></h3><div class="faq-a"><p>For the Shared Table, we bring the platters and boards the food is served on; plates, cutlery and glassware for your guests we generally leave to you as the host &mdash; though we're happy to provide as much or as little of this as you'd like, just ask. For the Plated Experience, all serveware and cutlery is included, with glassware available on request.</p></div></div>
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Where do you cook?","acceptedAnswer":{"@type":"Answer","text":"We do a lot of the prep off-site, then finish the prep and cooking at your place. All we ask for is bench space and a working oven and hob — we bring everything else, cook it there, and leave your kitchen as we found it."}},
+{"@type":"Question","name":"How many guests do you cook for?","acceptedAnswer":{"@type":"Answer","text":"Our private chef dinners are designed for 8 or more, whether that's an intimate plated tasting menu or a generous shared table."}},
+{"@type":"Question","name":"Can you work around dietaries and allergies?","acceptedAnswer":{"@type":"Answer","text":"Always. Tell us who's coming and what they can and can't eat, and we'll build the menu around it so those with dietaries never feel like an afterthought."}},
+{"@type":"Question","name":"Do we choose from a set menu?","acceptedAnswer":{"@type":"Answer","text":"Jake designs rotating menus with the seasons in mind. Most clients like some direction and tweak to taste; if you arrive with a clear idea, we shape your menu together."}},
+{"@type":"Question","name":"How do we lock in a date?","acceptedAnswer":{"@type":"Answer","text":"Start with a conversation. Once we've settled on a menu, we request a 30% deposit to secure your date. Weekends and December fill up fast."}},
+{"@type":"Question","name":"Do you provide the plates, cutlery and glassware?","acceptedAnswer":{"@type":"Answer","text":"For the Shared Table we bring the platters and boards; plates, cutlery and glassware we generally leave to the host but can provide on request. For the Plated Experience, all serveware and cutlery is included, glassware on request."}}
+]}
+</script>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="footer-logo" href="/" aria-label="Artisan at Home — home"><img src="/images/logo-cream.png" alt="Artisan at Home logomark"></a>
+    <nav class="footer-grid" aria-label="Footer">
+      <a href="/services/private-chef/">Private Chef</a>
+      <a href="/services/wedding-catering/">Wedding Catering</a>
+      <a href="/services/event-catering/">Event Catering</a>
+      <a href="/services/corporate-catering/">Corporate Catering</a>
+      <a href="/menus/">Menus</a>
+      <a href="/services/corporate-catering/order/">Order Now</a>
+      <a href="/our-story/">Our Story</a>
+      <a href="/contact-us/">Contact Us</a>
+      <a href="tel:0275723373">027 572 3373</a>
+      <a href="mailto:hello@artisanathome.nz">hello@artisanathome.nz</a>
+      <a href="https://www.instagram.com/artisanathome.nz" rel="noopener" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61585152107425" rel="noopener" target="_blank">Facebook</a>
+    </nav>
+  </div>
+  <div class="footer-base">Made with love, sweat &amp; tears by Abi. &copy; 2026 Artisan at Home.</div>
+</footer>
+<script src="/js/main.js"></script>
+<script>
+(function () {
+  var fab = document.getElementById('menuFab');
+  var panel = document.getElementById('navOverlay');
+  if (!fab || !panel) return;
+  function setOpen(o) { panel.classList.toggle('open', o); panel.setAttribute('aria-hidden', o ? 'false' : 'true'); fab.setAttribute('aria-expanded', o ? 'true' : 'false'); }
+  fab.addEventListener('click', function (e) { e.stopPropagation(); setOpen(!panel.classList.contains('open')); });
+  panel.addEventListener('click', function (e) { if (e.target.tagName === 'A') setOpen(false); });
+  document.addEventListener('click', function (e) { if (!panel.contains(e.target) && !fab.contains(e.target)) setOpen(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+})();
+(function () {
+  var wrap = document.getElementById('bookSteps');
+  var fill = document.getElementById('bsFill');
+  if (!wrap || !fill) return;
+  var items = [].slice.call(wrap.querySelectorAll('.bs-item'));
+  function onScroll() {
+    var r = wrap.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    var start = vh * 0.85, end = vh * 0.30;
+    var p = (start - r.top) / (start - end);
+    p = Math.max(0, Math.min(1, p));
+    fill.style.width = (p * 100).toFixed(1) + '%';
+    items.forEach(function (it, i) {
+      it.classList.toggle('active', p >= (i / items.length) * 0.92);
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+})();
+(function () {
+  var img = document.getElementById('mcImg');
+  if (!img) return;
+  var menus = [
+    '/images/menus/plated-menu.jpg',
+    '/images/menus/3-course-sharing-menu-1.jpg',
+    '/images/menus/3-course-sharing-menu-2.jpg'
+  ];
+  var dotsWrap = document.getElementById('mcDots');
+  var i = 0;
+  menus.forEach(function (m, n) {
+    var d = document.createElement('button');
+    d.setAttribute('aria-label', 'Menu ' + (n + 1));
+    d.addEventListener('click', function () { show(n); });
+    dotsWrap.appendChild(d);
+  });
+  var dots = [].slice.call(dotsWrap.children);
+  if (menus.length < 2) {
+    document.getElementById('mcPrev').style.display = 'none';
+    document.getElementById('mcNext').style.display = 'none';
+    dotsWrap.style.display = 'none';
+  }
+  function show(n) { i = (n + menus.length) % menus.length; img.src = menus[i]; dots.forEach(function (d, k) { d.classList.toggle('active', k === i); }); }
+  document.getElementById('mcPrev').addEventListener('click', function () { show(i - 1); });
+  document.getElementById('mcNext').addEventListener('click', function () { show(i + 1); });
+  show(0);
+  document.querySelectorAll('[data-menu]').forEach(function (btn) {
+    btn.addEventListener('click', function () { show(parseInt(btn.getAttribute('data-menu'), 10) || 0); });
+  });
+})();
+</script>
+</body>
+</html>

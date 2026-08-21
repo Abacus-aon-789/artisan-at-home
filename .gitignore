@@ -1,0 +1,9 @@
+# Mac system files
+.DS_Store
+
+# Original camera photos (HEIC) — we publish the web-ready JPGs instead
+*.HEIC
+*.heic
+
+# Working/scratch image conversions
+images/converted/

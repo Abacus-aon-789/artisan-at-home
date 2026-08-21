@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Corporate Catering Auckland | Artisan at Home</title>
+<meta name="description" content="Corporate catering that doesn't taste like catering. Morning teas, gourmet lunches and sweet treats delivered across Auckland. Build your order online.">
+<link rel="canonical" href="https://artisanathome.nz/services/corporate-catering/">
+<meta property="og:title" content="Corporate Catering Auckland | Artisan at Home">
+<meta property="og:description" content="Corporate catering that doesn't taste like catering. Morning teas, gourmet lunches and sweet treats delivered across Auckland. Build your order online.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://artisanathome.nz/services/corporate-catering/">
+<meta property="og:image" content="https://artisanathome.nz/images/og-image.png">
+<meta property="og:site_name" content="Artisan at Home">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Caveat:wght@500;600&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<style>
+/* ---------- Hero: bold centred title only ---------- */
+.page-hero--slim { min-height: 52vh; align-items: center; }
+.page-hero .wrap { text-align: center; }
+.page-hero h1 { font-size: clamp(2.8rem, 6.5vw, 5rem); font-weight: 700; letter-spacing: 0.005em; text-shadow: 0 2px 26px rgba(31,51,32,0.5); }
+
+/* ---------- Ordering system (corporate catering) ---------- */
+.order-layout { display: grid; grid-template-columns: 1fr 340px; gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+@media (max-width: 920px) { .order-layout { grid-template-columns: 1fr; } }
+
+.menu-cat { margin-bottom: 3rem; }
+.menu-cat > .eyebrow { margin-bottom: 0.3rem; }
+.menu-cat h2 { margin-bottom: 0.4rem; }
+.menu-cat .cat-note { font-size: 0.92rem; color: rgba(34,40,31,0.7); font-style: italic; margin-bottom: 1.6rem; }
+
+.group-card { border: 1px solid var(--line); background: var(--linen); padding: 1.4rem 1.5rem; margin-bottom: 1.2rem; }
+.group-card h3 { font-size: 1.35rem; margin-bottom: 0.15rem; }
+.group-card .group-note { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--honey); margin-bottom: 1rem; }
+
+.opt-row { display: flex; align-items: center; gap: 1rem; padding: 0.85rem 0; border-top: 1px solid var(--line); flex-wrap: wrap; }
+.opt-row:first-of-type { border-top: none; }
+.opt-row.is-special { background: rgba(168,130,63,0.10); border-left: 3px solid var(--honey); padding-left: 0.9rem; }
+.opt-info { flex: 1; min-width: 180px; }
+.opt-name { font-weight: 400; }
+.opt-desc { display: block; font-size: 0.86rem; color: rgba(34,40,31,0.65); margin-top: 0.15rem; }
+.opt-tag { font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--honey); margin-left: 0.4rem; white-space: nowrap; }
+.badge-special { display: inline-block; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--linen); background: var(--honey); padding: 0.18rem 0.55rem; margin-bottom: 0.4rem; }
+.opt-ctrl { display: flex; align-items: center; gap: 0.7rem; margin-left: auto; }
+.opt-price { font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--pine); font-weight: 400; min-width: 64px; text-align: right; }
+.opt-select select { font-family: var(--sans); font-size: 0.88rem; padding: 0.45rem 0.6rem; border: 1px solid var(--line); background: var(--linen); color: var(--ink); cursor: pointer; }
+.opt-addons { margin-top: 0.55rem; display: flex; flex-direction: column; gap: 0.3rem; }
+.opt-addons label { font-size: 0.82rem; color: rgba(34,40,31,0.75); display: flex; align-items: center; gap: 0.45rem; cursor: pointer; }
+
+.stepper { display: flex; align-items: center; gap: 0; border: 1px solid var(--pine); flex: none; }
+.stepper button { width: 34px; height: 34px; background: transparent; border: none; color: var(--pine); font-size: 1.2rem; line-height: 1; cursor: pointer; font-family: var(--sans); }
+.stepper button:hover { background: var(--pine); color: var(--linen); }
+.stepper .qty { min-width: 34px; text-align: center; font-variant-numeric: tabular-nums; font-size: 0.95rem; }
+.stepper.is-empty .minus { opacity: 0.3; pointer-events: none; }
+
+/* Cart */
+.cart { position: sticky; top: 100px; border: 1px solid var(--pine); background: var(--cream); padding: 1.5rem; }
+.cart h3 { font-size: 1.4rem; margin-bottom: 1rem; }
+.cart-empty { font-size: 0.92rem; color: rgba(34,40,31,0.6); font-style: italic; }
+.cart-lines { list-style: none; margin: 0 0 1rem; max-height: 45vh; overflow-y: auto; }
+.cart-line { display: flex; justify-content: space-between; gap: 0.6rem; padding: 0.55rem 0; border-bottom: 1px solid var(--line); font-size: 0.9rem; }
+.cart-line .cl-name { flex: 1; }
+.cart-line .cl-qty { color: rgba(34,40,31,0.6); }
+.cart-line .cl-price { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cart-total { display: flex; justify-content: space-between; font-size: 1.05rem; font-weight: 500; padding-top: 0.6rem; }
+.cart-total span:last-child { font-variant-numeric: tabular-nums; }
+.cart .fine { margin: 0.8rem 0 1.1rem; }
+.cart .btn { width: 100%; text-align: center; }
+.cart .btn[disabled] { opacity: 0.4; pointer-events: none; }
+
+.cart-bar { display: none; }
+@media (max-width: 920px) {
+  .cart { position: static; }
+  .cart-bar { display: flex; position: sticky; bottom: 0; z-index: 40; justify-content: space-between; align-items: center;
+    background: var(--pine); color: var(--linen); padding: 0.9rem 1.2rem; margin-top: 1rem; }
+  .cart-bar .cb-total { font-variant-numeric: tabular-nums; font-size: 1.05rem; }
+  .cart-bar a { color: var(--linen); border: 1px solid var(--linen); padding: 0.5rem 1.1rem; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; }
+}
+
+#order-summary { background: var(--cream); border: 1px solid var(--line); padding: 1rem 1.2rem; margin-bottom: 1.4rem; font-size: 0.9rem; white-space: pre-wrap; font-variant-numeric: tabular-nums; }
+.diet-key { font-size: 0.8rem; letter-spacing: 0.04em; color: rgba(34,40,31,0.7); margin-top: 1rem; }
+.cart-sub, .cart-del { font-size: 0.92rem; color: rgba(34,40,31,0.72); }
+.cart-grand { border-top: 1px solid var(--line); margin-top: 0.35rem; padding-top: 0.55rem; }
+.field-note { display: block; font-size: 0.78rem; color: rgba(34,40,31,0.6); margin-top: 0.3rem; }
+.opt-thumb { width: 54px; height: 54px; object-fit: cover; border-radius: 4px; cursor: pointer; flex: none; }
+.lightbox { position: fixed; inset: 0; background: rgba(31,51,32,0.86); display: none; align-items: center; justify-content: center; z-index: 200; padding: 4vw; cursor: zoom-out; }
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 92%; max-height: 88%; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+.lb-fig { margin: 0; display: flex; flex-direction: column; align-items: center; max-width: 92%; }
+.lb-fig img { max-width: 100%; max-height: 80vh; }
+.lb-cap { color: var(--cream); font-family: var(--sans); font-size: 0.95rem; letter-spacing: 0.05em; margin-top: 1rem; text-align: center; }
+/* Hover caption on gallery cells */
+.m-cell img { cursor: zoom-in; }
+.m-cap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.5rem 0.85rem 0.7rem; background: linear-gradient(to top, rgba(31,51,32,0.85), rgba(31,51,32,0)); color: var(--cream); font-family: var(--sans); font-size: 0.82rem; letter-spacing: 0.02em; line-height: 1.3; opacity: 0; transition: opacity .3s ease; pointer-events: none; border-radius: 0 0 6px 6px; }
+.m-cell:hover .m-cap { opacity: 1; }
+
+/* Category & group banner images */
+.cat-banner { display: block; width: 100%; height: 260px; object-fit: cover; margin-bottom: 1.2rem; }
+.group-banner { display: block; width: calc(100% + 3rem); height: 180px; object-fit: cover; margin: -1.4rem -1.5rem 1.1rem; }
+@media (max-width: 600px) { .cat-banner { height: 190px; } .group-banner { height: 150px; } }
+
+/* Gallery strip */
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
+.gallery-grid img { width: 100%; height: 300px; object-fit: cover; display: block; }
+@media (max-width: 820px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } .gallery-grid img { height: 240px; } }
+@media (max-width: 520px) { .gallery-grid { grid-template-columns: 1fr 1fr; } .gallery-grid img { height: 170px; } }
+
+/* ===== Static hover-zoom image mosaic ===== */
+.mosaic { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 120px; gap: 12px; grid-auto-flow: dense; }
+.m-cell { position: relative; }
+.m-cell img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 6px; transition: transform .35s ease, box-shadow .35s ease; }
+.m-cell:hover { z-index: 5; }
+.m-cell:hover img { transform: scale(1.14); box-shadow: 0 20px 44px rgba(31,51,32,0.30); border-radius: 4px; }
+.m-22 { grid-column: span 2; grid-row: span 2; }
+.m-12 { grid-column: span 1; grid-row: span 2; }
+.m-21 { grid-column: span 2; grid-row: span 1; }
+.m-11 { grid-column: span 1; grid-row: span 1; }
+@media (max-width: 760px) {
+  .mosaic { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 110px; }
+  .m-22 { grid-column: span 2; grid-row: span 2; }
+  .m-21 { grid-column: span 2; grid-row: span 1; }
+  .m-12 { grid-column: span 1; grid-row: span 2; }
+}
+
+/* ===== Made-by-us note + recipe-card ordering process ===== */
+.mbu-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.mbu-text .eyebrow { display: block; margin-bottom: 0.8rem; }
+.mbu-text p { margin-bottom: 1rem; }
+.mbu-sig { font-family: 'Caveat', cursive; font-size: 2.1rem; line-height: 1; color: var(--pine); margin-top: 0.5rem; }
+.mbu-tagline { font-family: 'Caveat', cursive; font-size: 1.9rem; color: var(--pine); margin: 0.2rem 0 1.1rem; line-height: 1; }
+
+.mbu-process { display: flex; justify-content: center; }
+.recipe-wrap { width: 100%; max-width: 24rem; }
+.recipe { position: relative; background: var(--linen); border: 2px dashed var(--honey); border-radius: 5px; padding: 1.7rem 1.8rem 1.9rem; transform: rotate(-1deg); box-shadow: 0 14px 32px rgba(31,51,32,0.10); opacity: 0; transition: opacity .6s ease, transform .6s ease; }
+#flow.in .recipe { opacity: 1; transform: rotate(-1deg) translateY(0); }
+.recipe { transform: rotate(-1deg) translateY(22px); }
+.recipe h3 { font-size: 1.55rem; margin: 0 0 0.1rem; }
+.recipe .r-sub { font-family: 'Caveat', cursive; font-size: 1.4rem; color: var(--honey); line-height: 1; margin-bottom: 1rem; }
+.recipe ol { margin: 0 0 0.3rem; padding: 0; list-style: none; counter-reset: r; }
+.recipe li { counter-increment: r; position: relative; padding: 0.75rem 0 0.75rem 2.7rem; border-top: 1px dashed rgba(168,130,63,0.42); font-size: 0.95rem; line-height: 1.45; color: rgba(34,40,31,0.82); opacity: 0; transform: translateX(8px); transition: opacity .5s ease, transform .5s ease; }
+.recipe li:first-child { border-top: none; }
+#flow.in .recipe li { opacity: 1; transform: none; }
+#flow.in .recipe li:nth-child(1) { transition-delay: .2s; }
+#flow.in .recipe li:nth-child(2) { transition-delay: .35s; }
+#flow.in .recipe li:nth-child(3) { transition-delay: .5s; }
+.recipe li::before { content: counter(r); position: absolute; left: 0; top: 0.7rem; width: 28px; height: 28px; border-radius: 50%; background: var(--honey); color: #fff; font-family: var(--serif); font-size: 0.95rem; display: grid; place-items: center; }
+.recipe strong { font-weight: 700; color: var(--pine-deep); }
+.recipe .btn { margin-top: 0.9rem; }
+@media (max-width: 860px) {
+  .mbu-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+  .recipe-wrap { margin: 0 auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .recipe { opacity: 1; transform: rotate(-1deg); }
+  .recipe li { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="hero-nav hero-nav--bar" aria-label="Primary">
+  <div class="hn-group">
+    <span class="hn-has-sub">
+      <a href="/services/">Services</a>
+      <span class="hn-sub">
+        <a href="/services/private-chef/">Private Chef</a>
+        <a href="/services/wedding-catering/">Wedding Catering</a>
+        <a href="/services/event-catering/">Event Catering</a>
+        <a href="/services/corporate-catering/">Corporate Catering</a>
+      </span>
+    </span>
+    <a href="/menus/">Menus</a>
+  </div>
+  <a class="hn-logo" href="/" aria-label="Artisan at Home — home"><img src="/images/logo-mark.png" alt="Artisan at Home"></a>
+  <div class="hn-group">
+    <a href="/our-story/">Our Story</a>
+    <a href="/contact-us/">Contact Us</a>
+  </div>
+</nav>
+<div class="menu-wrap">
+  <button class="menu-fab" id="menuFab" aria-label="Open menu" aria-expanded="false" aria-controls="navOverlay">+</button>
+  <nav class="menu-panel" id="navOverlay" aria-label="Main" aria-hidden="true">
+    <ul>
+      <li><a href="/services/private-chef/">Private Chef</a></li>
+      <li><a href="/services/wedding-catering/">Wedding Catering</a></li>
+      <li><a href="/services/event-catering/">Event Catering</a></li>
+      <li><a href="/services/corporate-catering/">Corporate Catering</a></li>
+      <li><a href="/menus/">Menus</a></li>
+      <li><a href="/our-story/">Our Story</a></li>
+      <li><a href="/contact-us/">Contact Us</a></li>
+    </ul>
+  </nav>
+</div>
+<main id="content">
+
+<section class="page-hero page-hero--slim" style="background-image: url('/images/converted/Catering%20spread.jpg'); background-position: center;">
+  <div class="wrap">
+    <h1>Corporate Catering</h1>
+  </div>
+</section>
+
+<section class="section section--cream mbu">
+  <div class="wrap">
+    <div class="mbu-grid">
+      <div class="mbu-text">
+        <h2 style="font-size: clamp(1.6rem, 3.2vw, 2.3rem); margin-bottom: 1rem;">Corporate Catering, but not as you know it&hellip;</h2>
+        <p>Good food starts with good ingredients. We approach our catering with a low/no waste mindset, using the whole ingredient where possible &mdash; the tomato jam on our frittatas is made from the middles of the tomatoes most kitchens throw away, and our Big Green Bowl uses the whole broccoli, stems and all.</p>
+        <p class="mbu-tagline">Less waste, more flavour.</p>
+        <p>We focus on making things artisanally at home &mdash; pestos, relishes, sauces, sauerkraut, dill pickles, you name it, we make it &mdash; even the salmon we smoke in-house. About the only thing we don&#39;t make is the bread &mdash; we leave that to the people who do it best.</p>
+        <p>It&#39;s how our food is packed with so much flavour and tastes the way it does.</p>
+        <div class="mbu-sig">Abi &amp; Jake</div>
+      </div>
+      <div class="mbu-process">
+        <div class="recipe-wrap" id="flow">
+          <div class="recipe">
+            <h3>How to order</h3>
+            <ol>
+              <li><strong>Pick what you fancy.</strong> Browse the menu and add it to your order.</li>
+              <li><strong>Send it our way.</strong> Pop in your details and send &mdash; no payment taken yet.</li>
+              <li><strong>We confirm &amp; sort payment.</strong> A quick check on the date, then a secure link to lock it in.</li>
+            </ol>
+            <a class="btn btn--solid" href="/services/corporate-catering/order/" style="display: block; width: fit-content; margin: 0.9rem auto 0;">Build Your Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section mosaic-section" aria-label="A taste of what we do">
+  <div class="wrap">
+    <div class="mosaic">
+      <div class="m-cell m-22"><img src="/images/converted/Fruit%20Platter.jpg" alt="Grazing fruit platter" loading="lazy"></div>
+      <div class="m-cell m-12"><img src="/images/converted/Summer%20Salads.jpg" alt="Seasonal summer salads" loading="lazy"></div>
+      <div class="m-cell m-11"><img src="/images/converted/Millionaires%20and%20brownie.jpg" alt="Millionaire's slice and brownie" loading="lazy"></div>
+      <div class="m-cell m-21"><img src="/images/converted/Sausage%20Rolls.jpg" alt="House-made sausage rolls" loading="lazy"></div>
+      <div class="m-cell m-22"><img src="/images/converted/Quiche.jpg" alt="Whole seasonal quiche" loading="lazy"></div>
+      <div class="m-cell m-11"><img src="/images/converted/Fruit%20skewers.jpg" alt="Fresh fruit skewers" loading="lazy"></div>
+      <div class="m-cell m-12"><img src="/images/converted/Cauliflower%20Power%20Salad.jpg" alt="Cauliflower power salad" loading="lazy"></div>
+      <div class="m-cell m-11"><img src="/images/converted/Scones.jpg" alt="Freshly baked scones" loading="lazy"></div>
+      <div class="m-cell m-21"><img src="/images/converted/Frittatas.jpg" alt="Seasonal frittatas" loading="lazy"></div>
+      <div class="m-cell m-22"><img src="/images/converted/Pasties%20and%20Frittatas.jpg" alt="Pasties and frittatas catering boxes" loading="lazy"></div>
+      <div class="m-cell m-12"><img src="/images/converted/Yoghurt%20Pots.jpg" alt="Yoghurt and granola pots" loading="lazy"></div>
+      <div class="m-cell m-11"><img src="/images/converted/Fruit%20Platter%202.jpg" alt="Fresh fruit platter" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
+  <figure class="lb-fig">
+    <img id="lbImg" src="" alt="">
+    <figcaption class="lb-cap" id="lbCap"></figcaption>
+  </figure>
+</div>
+
+<section class="section section--cream">
+  <div class="wrap">
+    <div class="section-head section-head--center">
+      <h2>Frequently <em>asked questions</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><h3 style="margin:0;"><button class="faq-q" aria-expanded="false">How does ordering work?</button></h3><div class="faq-a"><p>Browse the menu and build your order online, then send it through &mdash; no payment taken yet. We'll confirm your date and the details, then send a secure link to lock it in.</p></div></div>
+      <div class="faq-item"><h3 style="margin:0;"><button class="faq-q" aria-expanded="false">Is there a minimum order or lead time?</button></h3><div class="faq-a"><p>We have a minimum order of $350, and we ask for at least 24 hours' notice so everything's made fresh. Got a big or last-minute request? Just ask and we'll do our best.</p></div></div>
+      <div class="faq-item"><h3 style="margin:0;"><button class="faq-q" aria-expanded="false">Do you deliver, and where?</button></h3><div class="faq-a"><p>Yes &mdash; delivery across Auckland is a flat $35, and we deliver to the wider region too, adjusting the price accordingly. Let us know where you are and we'll confirm.</p></div></div>
+      <div class="faq-item"><h3 style="margin:0;"><button class="faq-q" aria-expanded="false">Can you cater dietaries?</button></h3><div class="faq-a"><p>Absolutely &mdash; there are vegetarian, vegan and gluten-free options throughout the menu, and we'll always flag what's what. Tell us about any allergies and we'll take care of it.</p></div></div>
+      <div class="faq-item"><h3 style="margin:0;"><button class="faq-q" aria-expanded="false">Can you do something that's not on the menu?</button></h3><div class="faq-a"><p>Often, yes. The online menu is our regular range, but if you've got something specific in mind for your team, get in touch and we'll see what we can do.</p></div></div>
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How does ordering work?","acceptedAnswer":{"@type":"Answer","text":"Browse the menu and build your order online, then send it through — no payment taken yet. We'll confirm your date and details, then send a secure link to lock it in."}},
+{"@type":"Question","name":"Is there a minimum order or lead time?","acceptedAnswer":{"@type":"Answer","text":"We have a minimum order of $350, and we ask for at least 24 hours' notice so everything's made fresh. For big or last-minute requests, just ask."}},
+{"@type":"Question","name":"Do you deliver, and where?","acceptedAnswer":{"@type":"Answer","text":"Yes — delivery across Auckland is a flat $35, and we deliver to the wider region too, adjusting the price accordingly."}},
+{"@type":"Question","name":"Can you cater dietaries?","acceptedAnswer":{"@type":"Answer","text":"Absolutely — there are vegetarian, vegan and gluten-free options throughout the menu, and we'll flag what's what. Tell us about any allergies and we'll take care of it."}},
+{"@type":"Question","name":"Can you do something that's not on the menu?","acceptedAnswer":{"@type":"Answer","text":"Often, yes. The online menu is our regular range, but if you've got something specific for your team, get in touch and we'll see what we can do."}}
+]}
+</script>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="footer-logo" href="/" aria-label="Artisan at Home — home"><img src="/images/logo-cream.png" alt="Artisan at Home logomark"></a>
+    <nav class="footer-grid" aria-label="Footer">
+      <a href="/services/private-chef/">Private Chef</a>
+      <a href="/services/wedding-catering/">Wedding Catering</a>
+      <a href="/services/event-catering/">Event Catering</a>
+      <a href="/services/corporate-catering/">Corporate Catering</a>
+      <a href="/menus/">Menus</a>
+      <a href="/services/corporate-catering/order/">Order Now</a>
+      <a href="/our-story/">Our Story</a>
+      <a href="/contact-us/">Contact Us</a>
+      <a href="tel:0275723373">027 572 3373</a>
+      <a href="mailto:hello@artisanathome.nz">hello@artisanathome.nz</a>
+      <a href="https://www.instagram.com/artisanathome.nz" rel="noopener" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61585152107425" rel="noopener" target="_blank">Facebook</a>
+    </nav>
+  </div>
+  <div class="footer-base">Made with love, sweat &amp; tears by Abi. &copy; 2026 Artisan at Home.</div>
+</footer>
+<script src="/js/main.js"></script>
+<script>
+(function () {
+  var fab = document.getElementById('menuFab');
+  var panel = document.getElementById('navOverlay');
+  if (!fab || !panel) return;
+  function setOpen(o) { panel.classList.toggle('open', o); panel.setAttribute('aria-hidden', o ? 'false' : 'true'); fab.setAttribute('aria-expanded', o ? 'true' : 'false'); }
+  fab.addEventListener('click', function (e) { e.stopPropagation(); setOpen(!panel.classList.contains('open')); });
+  panel.addEventListener('click', function (e) { if (e.target.tagName === 'A') setOpen(false); });
+  document.addEventListener('click', function (e) { if (!panel.contains(e.target) && !fab.contains(e.target)) setOpen(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+})();
+(function () {
+  var flow = document.getElementById('flow');
+  if (!flow) return;
+  if (!('IntersectionObserver' in window)) { flow.classList.add('in'); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) { if (en.isIntersecting) { flow.classList.add('in'); io.disconnect(); } });
+  }, { threshold: 0.25 });
+  io.observe(flow);
+})();
+(function () {
+  var mosaic = document.querySelector('.mosaic');
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lbImg');
+  var lbCap = document.getElementById('lbCap');
+  if (!mosaic || !lb) return;
+  mosaic.querySelectorAll('img').forEach(function (img) {
+    var cell = img.closest('.m-cell');
+    if (cell && img.alt) {
+      var cap = document.createElement('span');
+      cap.className = 'm-cap';
+      cap.textContent = img.alt;
+      cell.appendChild(cap);
+    }
+    img.addEventListener('click', function () {
+      lbImg.src = img.currentSrc || img.src;
+      lbImg.alt = img.alt;
+      lbCap.textContent = img.alt;
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden', 'false');
+    });
+  });
+  function close() { lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); lbImg.src = ''; }
+  lb.addEventListener('click', close);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && lb.classList.contains('open')) close(); });
+})();
+</script>
+</body>
+</html>
