@@ -52,3 +52,29 @@ document.querySelectorAll(".tabs").forEach((tablist) => {
   document.getElementById("textusX").addEventListener("click", function () { wrap.classList.remove("open"); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") wrap.classList.remove("open"); });
 })();
+
+/* Submit Formspree forms in the background, then redirect to our OWN branded thank-you
+   page (free — avoids Formspree's paid custom-redirect). Uses the path from _next on the
+   current domain, so it works on the preview AND the live site with no changes. */
+document.querySelectorAll('form.form[action*="formspree.io"]').forEach(function (form) {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = form.querySelector('[type="submit"]');
+    var nextInput = form.querySelector('input[name="_next"]');
+    var dest = '/';
+    if (nextInput && nextInput.value) {
+      try { dest = new URL(nextInput.value).pathname; } catch (err) { dest = nextInput.value; }
+    }
+    var original = btn ? btn.textContent : '';
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+    fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+      .then(function (r) {
+        if (r.ok) { window.location.assign(dest); return; }
+        throw new Error('submit failed');
+      })
+      .catch(function () {
+        window.alert("Sorry, that didn't send. Please try again, or email hello@artisanathome.nz.");
+        if (btn) { btn.disabled = false; btn.textContent = original; }
+      });
+  });
+});
