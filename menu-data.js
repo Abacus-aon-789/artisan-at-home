@@ -45,8 +45,8 @@ const MENU = [
           variants: [ { label: "Snack (8oz)", price: 8.75 }, { label: "Regular (12oz)", price: 14 } ] },
         { name: "Yoghurt Pots", img: "/images/cat-fresh-fruity.jpg", desc: "Blueberry compote & house-made granola", tags: "v", min: 8,
           variants: [ { label: "Snack (8oz)", price: 8.75 }, { label: "Regular (12oz)", price: 14 } ] },
-        { name: "Fruit Platter", img: "/images/gallery-3.jpg", variants: [ { label: "Small (serves 6–8)", price: 65 }, { label: "Large (serves 16–20)", price: 125 } ] },
-        { name: "Fruit Skewers", img: "/images/gallery-5.jpg", desc: "Min order 20", price: 5.5, min: 20 }
+        { name: "Fruit Platter", img: "/images/gallery-3.jpg", tags: "v", variants: [ { label: "Small (serves 6–8)", price: 65 }, { label: "Large (serves 16–20)", price: 125 } ] },
+        { name: "Fruit Skewers", img: "/images/gallery-5.jpg", desc: "Min order 20", price: 5.5, min: 20, tags: "v" }
       ]}
     ]
   },

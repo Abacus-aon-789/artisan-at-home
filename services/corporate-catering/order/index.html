@@ -40,7 +40,7 @@
 .opt-row.is-special .opt-name { font-weight: 700; }
 .opt-info { flex: 1; min-width: 180px; }
 .opt-name { font-weight: 400; }
-.opt-desc { display: block; font-size: 0.86rem; color: rgba(34,40,31,0.65); margin-top: 0.15rem; }
+.opt-desc { display: block; font-size: 0.86rem; color: var(--ink); font-style: italic; font-weight: 400; margin-top: 0.15rem; }
 .opt-tag { font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--honey); margin-left: 0.4rem; white-space: nowrap; }
 .badge-special { display: inline-block; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--linen); background: var(--honey); padding: 0.18rem 0.55rem; margin-bottom: 0.4rem; }
 .opt-ctrl { display: flex; align-items: center; gap: 0.7rem; margin-left: auto; }
@@ -251,8 +251,12 @@ body { background: #fff; }
         <input id="date" name="date_required" type="date" required>
       </div>
       <div>
-        <label for="time">Preferred Delivery Time</label>
-        <input id="time" name="delivery_time" type="time" lang="en-GB" step="900" required>
+        <label for="time-hour">Preferred Delivery Time</label>
+        <div class="time-row" style="display:flex; gap:0.6rem;">
+          <select id="time-hour" required aria-label="Delivery hour"><option value="" selected disabled>Hour</option></select>
+          <select id="time-min" required aria-label="Delivery minutes"><option value="" selected disabled>Min</option></select>
+        </div>
+        <input type="hidden" id="time" name="delivery_time">
         <small class="field-note">Your order may arrive up to 45 minutes before this time.</small>
       </div>
       <div class="full">
@@ -531,6 +535,36 @@ body { background: #fff; }
     else if (t === lb || (t && t.parentNode === lb)) { lb.classList.remove('open'); }
   });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') lb.classList.remove('open'); });
+})();
+</script>
+<script>
+/* Delivery time: separate hour + minute dropdowns (minutes fixed to :00/:15/:30/:45), synced to a hidden field */
+(function () {
+  var hourSel = document.getElementById('time-hour');
+  var minSel = document.getElementById('time-min');
+  var hidden = document.getElementById('time');
+  if (!hourSel || !minSel || !hidden) return;
+  for (var h = 6; h <= 20; h++) {
+    var ap = h < 12 ? 'AM' : 'PM';
+    var h12 = ((h + 11) % 12) + 1;
+    var o = document.createElement('option');
+    o.value = String(h); o.textContent = h12 + ' ' + ap;
+    hourSel.appendChild(o);
+  }
+  ['00', '15', '30', '45'].forEach(function (m) {
+    var o = document.createElement('option');
+    o.value = m; o.textContent = ':' + m;
+    minSel.appendChild(o);
+  });
+  function sync() {
+    if (hourSel.value === '' || minSel.value === '') { hidden.value = ''; return; }
+    var h = parseInt(hourSel.value, 10);
+    var ap = h < 12 ? 'AM' : 'PM';
+    var h12 = ((h + 11) % 12) + 1;
+    hidden.value = h12 + ':' + minSel.value + ' ' + ap;
+  }
+  hourSel.addEventListener('change', sync);
+  minSel.addEventListener('change', sync);
 })();
 </script>
 </body>

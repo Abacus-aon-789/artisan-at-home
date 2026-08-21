@@ -19,8 +19,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css">
+<style>
+.order-recap { max-width: 40rem; margin: 2.2rem auto 0; text-align: left; }
+.order-recap pre { white-space: pre-wrap; font-family: var(--sans); font-size: 0.9rem; background: var(--cream); border: 1px solid var(--line); border-radius: 6px; padding: 1.2rem 1.4rem; line-height: 1.6; margin-top: 0.6rem; }
+</style>
 </head>
-<body>
+<body class="page-white">
 <a class="skip-link" href="#content">Skip to content</a>
 <nav class="hero-nav hero-nav--bar" aria-label="Primary">
   <div class="hn-group">
@@ -59,30 +63,18 @@
 </div>
 <main id="content">
 
-<section class="hero">
+<section class="section" style="min-height: 62vh; display: flex; align-items: center;">
   <div class="wrap hero--text">
     <span class="eyebrow">&middot; Order Received &middot;</span>
     <h1>Thank you for <em>your order.</em></h1>
-    <p class="lead">We've received your catering order and will be in touch shortly to confirm the date and details &mdash; then we'll send you a secure payment link to lock it in. No payment has been taken yet.</p>
-    <div class="contact-quick">
-      <a class="btn" href="mailto:hello@artisanathome.nz">&#9993;&#65039; Email Us</a>
-      <a class="btn" href="tel:0275723373">&#128222; Call 027 572 3373</a>
+    <p class="lead">We'll review your order and confirm availability for your date, usually within the same day during business hours. Once confirmed, you'll receive a secure payment link to complete your booking. If anything's urgent, give us a call or text on 027 572 3373.</p>
+    <div id="order-recap" class="order-recap" hidden>
+      <span class="eyebrow" style="margin-bottom: 0.4rem;">Your order</span>
+      <pre id="order-recap-body"></pre>
     </div>
-  </div>
-</section>
-
-<section class="section section--cream">
-  <div class="wrap">
-    <div class="section-head section-head--center">
-      <span class="eyebrow">What Happens Next</span>
-      <h2>From here, <em>we've got it</em></h2>
-      <p>We'll review your order and confirm availability for your date, usually within the same day during business hours. Once confirmed, you'll receive a secure Stripe payment link to complete your booking. If anything's urgent, give us a call or text on 027 572 3373.</p>
-    </div>
-    <div class="cta-band">
-      <div class="btn-row">
-        <a class="btn btn--solid" href="/">&larr; Back to Home</a>
-        <a class="btn" href="/services/corporate-catering/">Back to Catering Menu</a>
-      </div>
+    <div class="btn-row" style="justify-content: center;">
+      <a class="btn btn--solid" href="/">&larr; Back to home</a>
+      <a class="btn" href="tel:0275723373">Call us</a>
     </div>
   </div>
 </section>
@@ -111,6 +103,19 @@
 <script src="/js/main.js"></script>
 <script>
 (function(){var fab=document.getElementById('menuFab');var panel=document.getElementById('navOverlay');if(fab&&panel){function setOpen(o){panel.classList.toggle('open',o);panel.setAttribute('aria-hidden',o?'false':'true');fab.setAttribute('aria-expanded',o?'true':'false');}fab.addEventListener('click',function(e){e.stopPropagation();setOpen(!panel.classList.contains('open'));});panel.addEventListener('click',function(e){if(e.target.tagName==='A')setOpen(false);});document.addEventListener('click',function(e){if(!panel.contains(e.target)&&!fab.contains(e.target))setOpen(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')setOpen(false);});}})();
+</script>
+<script>
+(function(){
+  var box=document.getElementById('order-recap'), body=document.getElementById('order-recap-body');
+  if(!box||!body) return;
+  var summary=sessionStorage.getItem('aah_order')||'';
+  var total=sessionStorage.getItem('aah_order_total')||'';
+  if(summary.trim()){
+    body.textContent = summary + (total ? '\n\nEstimated total: '+total : '');
+    box.hidden=false;
+    sessionStorage.removeItem('aah_order'); sessionStorage.removeItem('aah_order_total');
+  }
+})();
 </script>
 </body>
 </html>

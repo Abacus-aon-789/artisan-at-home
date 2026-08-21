@@ -69,7 +69,11 @@ document.querySelectorAll('form.form[action*="formspree.io"]').forEach(function 
     if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
     fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
       .then(function (r) {
-        if (r.ok) { window.location.assign(dest); return; }
+        if (r.ok) {
+          var ord = form.querySelector('[name="order"]'), tot = form.querySelector('[name="order_total"]');
+          if (ord && ord.value) { try { sessionStorage.setItem('aah_order', ord.value); sessionStorage.setItem('aah_order_total', tot ? (tot.value || '') : ''); } catch (se) {} }
+          window.location.assign(dest); return;
+        }
         throw new Error('submit failed');
       })
       .catch(function () {
