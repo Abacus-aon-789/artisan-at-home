@@ -13,10 +13,11 @@ The site is built and QA'd. These are the steps to switch `artisanathome.nz` ove
 
 4. **Wait for DNS to propagate** (minutes to a few hours). Once `artisanathome.nz` shows the new site, you're live.
 
-5. **Test the forms on the live domain** — send a test through the Contact, Wedding, Event and Order forms and confirm the email arrives and you land on the thank-you page. (The redirects already point to `artisanathome.nz`, so they only work once the domain is live.)
+5. **Flip the form redirects to the live domain** — the 4 forms currently redirect to the Vercel preview (so testing looks right now). Once `artisanathome.nz` is live, change their after-submit URL to `https://artisanathome.nz/...` (I can do this in one step).
+6. **Test the forms on the live domain** — send a test through the Contact, Wedding, Event and Order forms and confirm the email arrives and you land on the branded thank-you page.
 
 ## Already done
-- All 4 form redirects switched to `https://artisanathome.nz/...`
+- All forms tested and working (redirects point to the Vercel preview for now — flip to the live domain at go-live)
 - Every page on the new header/footer/nav
 - Links, images and responsive layouts checked
 
