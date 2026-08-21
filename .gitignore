@@ -5,5 +5,3 @@
 *.HEIC
 *.heic
 
-# Working/scratch image conversions
-images/converted/
