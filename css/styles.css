@@ -525,8 +525,13 @@ h1 em, h2 em, h3 em { font-style: normal; font-weight: 600; color: var(--pine); 
 
 /* Floating menu button + compact dropdown panel */
 .menu-wrap { position: fixed; top: 1.3rem; right: 1.3rem; z-index: 60; display: none; }
-.menu-fab { background: transparent; border: none; color: var(--pine); cursor: pointer; font-family: var(--sans); font-weight: 400; font-size: 2.6rem; line-height: 1; padding: 0; width: 46px; height: 46px; text-align: center; text-shadow: 0 2px 8px rgba(31,51,32,0.18); }
-.menu-fab:hover { color: var(--honey); }
+.menu-fab { position: relative; background: var(--pine); border: none; border-radius: 50%; cursor: pointer; padding: 0; width: 52px; height: 52px; font-size: 0; box-shadow: 0 4px 14px rgba(31,51,32,0.32); transition: background 0.2s ease; }
+.menu-fab:hover { background: var(--pine-deep); }
+.menu-fab::before, .menu-fab::after { content: ""; position: absolute; top: 50%; left: 50%; width: 22px; height: 2.5px; background: var(--linen); border-radius: 2px; transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.2s ease; }
+.menu-fab::before { transform: translate(-50%, -50%); box-shadow: 0 -7px 0 var(--linen), 0 7px 0 var(--linen); }
+.menu-fab::after { transform: translate(-50%, -50%); opacity: 0; }
+.menu-fab[aria-expanded="true"]::before { box-shadow: none; transform: translate(-50%, -50%) rotate(45deg); }
+.menu-fab[aria-expanded="true"]::after { opacity: 1; transform: translate(-50%, -50%) rotate(-45deg); }
 .menu-panel { position: absolute; top: calc(100% + 8px); right: 0; min-width: 230px; background: var(--cream); border: 1px solid var(--line); box-shadow: 0 12px 32px rgba(31,51,32,0.18); padding: 0.5rem 0; opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity 0.2s ease, transform 0.2s ease; }
 .menu-panel.open { opacity: 1; visibility: visible; transform: translateY(0); }
 .menu-panel ul { list-style: none; margin: 0; padding: 0; }

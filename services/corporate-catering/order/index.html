@@ -134,6 +134,18 @@ body { background: #fff; }
 .order-panel .form { max-width: none; margin-top: 1.6rem; }
 #order-submit { justify-self: center; grid-column: 1 / -1; margin-top: 0.6rem; }
 #order-submit-note { grid-column: 1 / -1; text-align: center; }
+
+/* Minimum-order note */
+.min-order-note { display: inline-block; margin-top: 0.9rem; font-family: var(--sans); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.02em; color: var(--pine-deep); background: rgba(168,130,63,0.14); border: 1px solid rgba(168,130,63,0.4); border-radius: 6px; padding: 0.5rem 0.9rem; }
+
+/* Mobile: prevent horizontal overflow / zoomed-in view */
+@media (max-width: 920px) {
+  .order-layout { grid-template-columns: minmax(0, 1fr); }
+  .order-layout > * { min-width: 0; max-width: 100%; }
+  .opt-info { min-width: 0; }
+  .cat-nav, .cat-nav .cn-list { min-width: 0; max-width: 100%; }
+  .order-panel { max-width: 100%; }
+}
 </style>
 </head>
 <body>
@@ -180,6 +192,7 @@ body { background: #fff; }
     <div class="section-head">
       <h1>Corporate <em>Catering Menu</em></h1>
       <p>Everything is made fresh to order. Add items below to build your order. Dietary requirements can be accommodated; just note them when you send your order.</p>
+      <span class="min-order-note">Minimum order $250 (plus a $35 delivery fee)</span>
       </div>
 
     <div class="order-layout">
@@ -504,12 +517,24 @@ body { background: #fff; }
     const belowMin = ids.filter((id) => cart[id].qty < cart[id].min);
     if (!has) { submit.disabled = true; note.textContent = "Add at least one item to your order to send."; }
     else if (belowMin.length) { submit.disabled = true; note.textContent = "Some items are below their minimum order quantity. Please adjust before sending."; }
+    else if (subtotal < 250) { submit.disabled = false; note.textContent = "Minimum order is $250 — you're at " + fmt(subtotal) + ". Add a little more to send."; }
     else { submit.disabled = false; note.textContent = "No payment is taken now. We'll confirm your order and send a secure payment link."; }
   }
 
   document.getElementById("cart-checkout").addEventListener("click", (e) => {
     if (e.currentTarget.hasAttribute("disabled")) e.preventDefault();
   });
+
+  /* Enforce $250 minimum order on submit (runs before the AJAX send handler) */
+  document.getElementById("order-form").addEventListener("submit", function (e) {
+    const subEl = document.getElementById("cart-subtotal");
+    const sub = parseFloat((subEl.textContent || "").replace(/[^0-9.]/g, "")) || 0;
+    if (sub < 250) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      window.alert("Our minimum order is $250. You're currently at " + subEl.textContent + " — please add a little more to your order before sending.");
+    }
+  }, true);
 
   render();
 })();

@@ -28,3 +28,7 @@ The site is built and QA'd. These are the steps to switch `artisanathome.nz` ove
 ## SEO polish (after launch)
 - Submit `sitemap.xml` in Google Search Console
 - Suburb targeting (Devonport, Takapuna, Matakana, etc.)
+
+## Post-launch backlog
+- **Website security check** — confirm HTTPS is enforced (http → https redirect), review security headers, and check form spam protection.
+- **Decommission the old website** — once the new site is confirmed live and stable, cancel/turn off the old WordPress web hosting at 1st Domains (keep the domain + email; only remove the old hosting).
