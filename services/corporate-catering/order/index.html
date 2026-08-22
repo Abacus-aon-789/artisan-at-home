@@ -145,6 +145,15 @@ body { background: #fff; }
   .opt-info { min-width: 0; }
   .cat-nav, .cat-nav .cn-list { min-width: 0; max-width: 100%; }
   .order-panel { max-width: 100%; }
+  .cart-bar[hidden] { display: none; }
+  body.cart-bar-open .textus { bottom: 5rem; }
+}
+/* Phone: stack each menu item's name/desc above its price + controls */
+@media (max-width: 600px) {
+  .opt-info { flex: 1 1 100%; }
+  .opt-ctrl { width: 100%; margin-left: 0; flex-wrap: wrap; justify-content: flex-start; column-gap: 1.1rem; row-gap: 0.6rem; }
+  .opt-select { flex: 1 1 100%; }
+  .opt-select select { width: 100%; }
 }
 </style>
 </head>
@@ -499,6 +508,7 @@ body { background: #fff; }
     checkout.setAttribute("aria-disabled", String(!has));
     const bar = document.getElementById("cart-bar");
     bar.hidden = !has;
+    document.body.classList.toggle("cart-bar-open", has);
     document.getElementById("cart-bar-count").textContent = count + (count === 1 ? " item" : " items");
     document.getElementById("cart-bar-total").textContent = fmt(grand);
 
