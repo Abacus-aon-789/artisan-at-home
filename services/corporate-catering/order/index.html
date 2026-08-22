@@ -113,11 +113,13 @@
 .cat-nav a.cn-cat:first-child { margin-top: 0; }
 @media (max-width: 1080px) {
   .order-layout { grid-template-columns: 1fr 320px; }
-  .cat-nav { grid-column: 1 / -1; position: sticky; top: 60px; z-index: 6; background: var(--cream); border-bottom: 1px solid var(--line); margin-bottom: 0.5rem; padding: 0.2rem 0; }
+  .cat-nav { grid-column: 1 / -1; position: sticky; top: 60px; z-index: 6; background: var(--cream); border-bottom: 1px solid var(--line); margin-bottom: 0.6rem; padding: 0.6rem 0; }
   .cat-nav .cn-title { display: none; }
-  .cat-nav .cn-list { flex-direction: row; overflow-x: auto; gap: 0; -webkit-overflow-scrolling: touch; }
-  .cat-nav a { white-space: nowrap; border-left: none; border-bottom: 2px solid transparent; }
-  .cat-nav a.active { border-left: none; border-bottom-color: var(--honey); background: transparent; }
+  .cat-nav .cn-list { display: flex; flex-flow: row wrap; gap: 0.4rem; }
+  .cat-nav a.cn-group { display: none; }
+  .cat-nav a.cn-cat { margin-top: 0; font-weight: 600; white-space: normal; border: 1px solid var(--line); border-radius: 7px; padding: 0.42rem 0.7rem; font-size: 0.8rem; line-height: 1.15; background: #fff; color: var(--pine); }
+  .cat-nav a.cn-cat:hover { background: var(--linen); }
+  .cat-nav a.cn-cat.active-cat { border-color: var(--honey); background: var(--honey); color: #fff; }
 }
 @media (max-width: 920px) { .order-layout { grid-template-columns: 1fr; } }
 
@@ -151,9 +153,10 @@ body { background: #fff; }
 /* Phone: stack each menu item's name/desc above its price + controls */
 @media (max-width: 600px) {
   .opt-info { flex: 1 1 100%; }
-  .opt-ctrl { width: 100%; margin-left: 0; flex-wrap: wrap; justify-content: flex-start; column-gap: 1.1rem; row-gap: 0.6rem; }
+  .opt-ctrl { width: 100%; margin-left: 0; flex-wrap: wrap; justify-content: flex-end; align-items: center; column-gap: 1.1rem; row-gap: 0.6rem; }
   .opt-select { flex: 1 1 100%; }
   .opt-select select { width: 100%; }
+  .opt-price { text-align: right; }
 }
 </style>
 </head>
@@ -457,6 +460,9 @@ body { background: #fff; }
       var idx = 0;
       sections.forEach(function (s, i) { if (s && s.getBoundingClientRect().top <= 150) idx = i; });
       links.forEach(function (l, i) { l.classList.toggle("active", i === idx); });
+      var catIdx = 0;
+      for (var j = 0; j <= idx; j++) { if (links[j].classList.contains("cn-cat")) catIdx = j; }
+      links.forEach(function (l, i) { l.classList.toggle("active-cat", i === catIdx); });
     }
     window.addEventListener("scroll", spy, { passive: true });
     window.addEventListener("resize", spy);
