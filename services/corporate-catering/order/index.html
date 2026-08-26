@@ -203,7 +203,7 @@ body { background: #fff; }
   <div class="wrap">
     <div class="section-head">
       <h1>Corporate <em>Catering Menu</em></h1>
-      <p>Everything is made fresh to order. Add items below to build your order. Dietary requirements can be accommodated; just note them when you send your order.</p>
+      <p>Everything is made fresh to order, so we ask for at least 48 hours' notice — the sooner the better, as it helps us bring in the freshest produce for you. Add items below to build your order. Dietary requirements can be accommodated; just note them when you send it through.</p>
       <span class="min-order-note">Minimum order $250 (plus a $35 delivery fee)</span>
       </div>
 
@@ -274,6 +274,7 @@ body { background: #fff; }
       <div>
         <label for="date">Date Required</label>
         <input id="date" name="date_required" type="date" required>
+        <small class="field-note">Please allow at least 48 hours' notice. Some dates may be unavailable.</small>
       </div>
       <div>
         <label for="time-hour">Preferred Delivery Time</label>
@@ -606,6 +607,33 @@ body { background: #fff; }
   }
   hourSel.addEventListener('change', sync);
   minSel.addEventListener('change', sync);
+})();
+</script>
+<script>
+/* Blocked dates + 48-hour minimum notice on the Date Required field */
+(function () {
+  var dateInput = document.getElementById("date");
+  var form = document.getElementById("order-form");
+  if (!dateInput || !form) return;
+  var blocked = ["2026-08-27","2026-08-28","2026-09-25","2026-09-26","2026-10-02","2026-10-03","2026-10-08","2026-10-09","2026-11-26","2026-11-27"];
+  var pad = function (n) { return (n < 10 ? "0" : "") + n; };
+  var iso = function (d) { return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); };
+  var min = new Date(); min.setDate(min.getDate() + 2);
+  dateInput.min = iso(min);
+  function problem(v) {
+    if (!v) return "";
+    if (v < dateInput.min) return "We need at least 48 hours' notice — please choose a later date.";
+    if (blocked.indexOf(v) !== -1) return "Sorry, we're already booked on that date. Please choose another day.";
+    return "";
+  }
+  dateInput.addEventListener("change", function () {
+    var p = problem(dateInput.value);
+    if (p) { window.alert(p); dateInput.value = ""; dateInput.focus(); }
+  });
+  form.addEventListener("submit", function (e) {
+    var p = problem(dateInput.value);
+    if (p) { e.preventDefault(); e.stopImmediatePropagation(); window.alert(p); dateInput.focus(); }
+  }, true);
 })();
 </script>
 </body>
