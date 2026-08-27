@@ -18,6 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
 <style>
 /* ---------- Ordering system (corporate catering) ---------- */
 .order-layout { display: grid; grid-template-columns: 1fr 340px; gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
@@ -138,7 +139,10 @@ body { background: #fff; }
 #order-submit-note { grid-column: 1 / -1; text-align: center; }
 
 /* Minimum-order note */
-.min-order-note { display: inline-block; margin-top: 0.9rem; font-family: var(--sans); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.02em; color: var(--pine-deep); background: rgba(168,130,63,0.14); border: 1px solid rgba(168,130,63,0.4); border-radius: 6px; padding: 0.5rem 0.9rem; }
+.min-order-note { display: inline-block; margin: 0.9rem 0.5rem 0 0; font-family: var(--sans); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.02em; color: var(--pine-deep); background: rgba(168,130,63,0.14); border: 1px solid rgba(168,130,63,0.4); border-radius: 6px; padding: 0.5rem 0.9rem; }
+.flatpickr-day.day-full, .flatpickr-day.day-full.flatpickr-disabled { color: #c0392b !important; text-decoration: line-through; text-decoration-thickness: 2px; opacity: 1 !important; }
+.flatpickr-day.selected, .flatpickr-day.selected:hover, .flatpickr-day.selected:focus { background: var(--pine); border-color: var(--pine); }
+.flatpickr-day.today { border-color: var(--honey); }
 
 /* Mobile: prevent horizontal overflow / zoomed-in view */
 @media (max-width: 920px) {
@@ -174,7 +178,12 @@ body { background: #fff; }
         <a class="hn-sub-child" href="/services/corporate-catering/order/">Order Now</a>
       </span>
     </span>
-    <a href="/menus/">Menus</a>
+    <span class="hn-has-sub">
+      <a href="/menus/">Menus</a>
+      <span class="hn-sub">
+        <a href="/services/corporate-catering/order/">Corporate Catering</a>
+      </span>
+    </span>
   </div>
   <a class="hn-logo" href="/" aria-label="Artisan at Home — home"><img src="/images/logo-mark.png" alt="Artisan at Home"></a>
   <div class="hn-group">
@@ -192,6 +201,7 @@ body { background: #fff; }
       <li><a href="/services/corporate-catering/">Corporate Catering</a></li>
       <li class="mob-child"><a href="/services/corporate-catering/order/">Order Now</a></li>
       <li><a href="/menus/">Menus</a></li>
+      <li class="mob-child"><a href="/services/corporate-catering/order/">Corporate Catering</a></li>
       <li><a href="/our-story/">Our Story</a></li>
       <li><a href="/contact-us/">Contact Us</a></li>
     </ul>
@@ -203,8 +213,9 @@ body { background: #fff; }
   <div class="wrap">
     <div class="section-head">
       <h1>Corporate <em>Catering Menu</em></h1>
-      <p>Everything is made fresh to order, so we ask for at least 48 hours' notice — the sooner the better, as it helps us bring in the freshest produce for you. Add items below to build your order. Dietary requirements can be accommodated; just note them when you send it through.</p>
-      <span class="min-order-note">Minimum order $250 (plus a $35 delivery fee)</span>
+      <p>Everything is made fresh to order. Add items below to build your order. Dietary requirements can be accommodated; just note them when you send it through.</p>
+      <span class="min-order-note">Minimum order $250</span>
+      <span class="min-order-note">Min. 48 hours' notice — sooner the better</span>
       </div>
 
     <div class="order-layout">
@@ -223,7 +234,8 @@ body { background: #fff; }
           <div class="cart-total cart-del"><span>Delivery</span><span id="cart-delivery">$35.00</span></div>
           <div class="cart-total cart-grand"><span>Total</span><span id="cart-total">$0.00</span></div>
         </div>
-        <p class="fine">A flat <strong>$35 delivery fee</strong> applies &mdash; this covers Auckland central &amp; surrounding. If your location falls outside this, we'll be in touch. No payment is taken now; we'll confirm your order and send a secure payment link.</p>
+        <p class="fine">A flat <strong>$35 delivery fee</strong> applies &mdash; this covers Auckland central &amp; surrounding. If your location falls outside this, we'll be in touch.</p>
+        <p class="fine">No payment is taken now; we'll confirm your order and send a secure payment link.</p>
         <a class="btn btn--solid" id="cart-checkout" href="#order-details" aria-disabled="true" disabled>Continue to Order Details</a>
       </aside>
     </div>
@@ -273,7 +285,7 @@ body { background: #fff; }
       </div>
       <div>
         <label for="date">Date Required</label>
-        <input id="date" name="date_required" type="date" required>
+        <input id="date" name="date_required" type="date">
         <small class="field-note">Please allow at least 48 hours' notice. Some dates may be unavailable.</small>
       </div>
       <div>
@@ -609,30 +621,77 @@ body { background: #fff; }
   minSel.addEventListener('change', sync);
 })();
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
 <script>
-/* Blocked dates + 48-hour minimum notice on the Date Required field */
+/* 48-hour minimum notice + blocked-out dates on the Date Required field */
 (function () {
   var dateInput = document.getElementById("date");
   var form = document.getElementById("order-form");
   if (!dateInput || !form) return;
-  var blocked = ["2026-08-27","2026-08-28","2026-09-25","2026-09-26","2026-10-02","2026-10-03","2026-10-08","2026-10-09","2026-11-26","2026-11-27"];
+
+  /* =====================================================================
+     BLOCKED-OUT DATES  —  Abi, you can edit this list yourself.
+     Dates in this list CANNOT be ordered for (you're away / fully booked).
+       • Write each date as  "YYYY-MM-DD"  in quotes.
+             "2026-12-25"  =  25 December 2026
+             "2027-01-05"  =  5 January 2027
+       • To ADD a date:    add a new line inside the [ ]  →   "2027-01-05",
+       • To REMOVE a date: delete its whole line.
+       • Keep the quotes, the commas, and the square brackets [ ].
+     Then save the file and publish as usual.
+     ===================================================================== */
+  var blocked = [
+    "2026-08-27",
+    "2026-08-28",
+    "2026-09-25",
+    "2026-09-26",
+    "2026-10-02",
+    "2026-10-03",
+    "2026-10-08",
+    "2026-10-09",
+    "2026-11-26",
+    "2026-11-27"
+  ];
   var pad = function (n) { return (n < 10 ? "0" : "") + n; };
   var iso = function (d) { return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); };
-  var min = new Date(); min.setDate(min.getDate() + 2);
-  dateInput.min = iso(min);
+  var minD = new Date(); minD.setDate(minD.getDate() + 2);
+  var minStr = iso(minD);
+
   function problem(v) {
-    if (!v) return "";
-    if (v < dateInput.min) return "We need at least 48 hours' notice — please choose a later date.";
+    if (!v) return "Please choose a date for your order.";
+    if (v < minStr) return "We need at least 48 hours' notice — please choose a later date.";
     if (blocked.indexOf(v) !== -1) return "Sorry, we're already booked on that date. Please choose another day.";
     return "";
   }
-  dateInput.addEventListener("change", function () {
-    var p = problem(dateInput.value);
-    if (p) { window.alert(p); dateInput.value = ""; dateInput.focus(); }
-  });
+
+  if (window.flatpickr) {
+    // Nicer calendar: greys out anything under 48 hours; blocked dates show red + strikethrough
+    flatpickr(dateInput, {
+      minDate: minStr,
+      dateFormat: "Y-m-d",
+      altInput: true,
+      altFormat: "l j F Y",
+      disable: blocked,
+      disableMobile: true,
+      onDayCreate: function (dObj, dStr, fp, dayElem) {
+        if (dayElem.dateObj && blocked.indexOf(iso(dayElem.dateObj)) !== -1) { dayElem.classList.add("day-full"); }
+      }
+    });
+  } else {
+    // Fallback if the calendar library doesn't load
+    dateInput.min = minStr;
+    dateInput.addEventListener("change", function () {
+      var p = dateInput.value ? problem(dateInput.value) : "";
+      if (p) { window.alert(p); dateInput.value = ""; dateInput.focus(); }
+    });
+  }
+
   form.addEventListener("submit", function (e) {
     var p = problem(dateInput.value);
-    if (p) { e.preventDefault(); e.stopImmediatePropagation(); window.alert(p); dateInput.focus(); }
+    if (p) {
+      e.preventDefault(); e.stopImmediatePropagation(); window.alert(p);
+      if (dateInput._flatpickr) { dateInput._flatpickr.open(); } else { dateInput.focus(); }
+    }
   }, true);
 })();
 </script>

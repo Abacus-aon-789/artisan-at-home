@@ -75,6 +75,26 @@ The preview only runs while the Terminal server is on. To start it:
 
 ---
 
+## Blocking out dates on the order form (holidays / fully booked)
+
+The corporate catering order form lets you block specific dates so customers
+can't order for them.
+
+1. Open **`services/corporate-catering/order/index.html`** in VS Code.
+2. Press **Cmd + F** and search for **BLOCKED-OUT DATES** — it jumps you
+   straight to the list, which has plain-English instructions right above it.
+3. Each blocked date is a line like `"2026-12-25",` — the format is
+   **"YEAR-MONTH-DAY"** in quotes (so `"2026-12-25"` = 25 December 2026).
+   - **Add** a date: add a new line inside the `[ ]`, e.g. `"2027-01-05",`
+   - **Remove** a date: delete its whole line.
+   - Keep the quotes, the commas, and the square brackets `[ ]`.
+4. **Save** (Cmd + S) and **publish** as usual.
+
+There's also an automatic **48-hour minimum notice** — customers can't pick a
+date less than 2 days away. That adjusts itself; you don't need to touch it.
+
+---
+
 ## Publishing changes (making them go live)
 
 Editing a file only changes your computer's copy. To put a change on the
