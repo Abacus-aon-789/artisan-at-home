@@ -20,7 +20,8 @@
 |---|---|---|---|
 | Parmesan Scones & Thyme Butter | $7.00 | v | |
 | Date Scones & Zesty Orange Butter | $7.00 | v | |
-| Orange & Almond Muffins | $5.50 | v · gf | |
+| Orange & Almond Mini Cakes | $5.50 | v · gf | |
+| Blueberry & Cream Cheese Muffins | $6.00 | v | |
 | Tomato & Feta Frittata | $5.50 | v · gf | |
 | Bacon & Cheddar Frittata | $5.50 | gf | |
 | Pork & Fennel Sausage Roll | $5.50 | | Apple jam |

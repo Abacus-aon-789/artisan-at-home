@@ -25,7 +25,8 @@ const MENU = [
       { options: [
         { name: "Parmesan Scones & Thyme Butter", img: "/images/cat-morning-tea.jpg", price: 7, min: 8, tags: "v" },
         { name: "Date Scones & Zesty Orange Butter", img: "/images/cat-morning-tea.jpg", price: 7, min: 8, tags: "v" },
-        { name: "Orange & Almond Muffins", price: 5.5, min: 8, tags: "v · gf" },
+        { name: "Orange & Almond Mini Cakes", price: 5.5, min: 8, tags: "v · gf" },
+        { name: "Blueberry & Cream Cheese Muffins", price: 6, min: 8, tags: "v" },
         { name: "Tomato & Feta Frittata", price: 5.5, min: 8, tags: "v · gf" },
         { name: "Bacon & Cheddar Frittata", price: 5.5, min: 8, tags: "gf" },
         { name: "Pork & Fennel Sausage Roll", desc: "Apple jam", price: 5.5, min: 8 },
