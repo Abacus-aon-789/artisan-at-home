@@ -598,7 +598,7 @@ h1 em, h2 em, h3 em { font-style: normal; font-weight: 600; color: var(--pine); 
 
 /* Nav item dropdown (e.g. Order Now under Corporate Catering) */
 .hn-has-sub { position: relative; display: inline-flex; }
-.hn-sub { position: absolute; top: 100%; left: 0; margin-top: 0; background: var(--cream); border: 1px solid var(--line); border-top: none; padding: 0.2rem 0; min-width: 100%; width: max-content; opacity: 0; visibility: hidden; transition: opacity 0.18s ease; z-index: 3; }
+.hn-sub { position: absolute; top: 100%; left: 0; margin-top: 0; background: var(--linen); border: 1px solid var(--line); border-top: none; padding: 0.2rem 0; min-width: 100%; width: max-content; opacity: 0; visibility: hidden; transition: opacity 0.18s ease; z-index: 3; }
 .hn-has-sub::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 12px; }
 .hn-has-sub:hover .hn-sub, .hn-has-sub:focus-within .hn-sub { opacity: 1; visibility: visible; }
 .hn-sub a { display: block; text-align: left; padding: 0.5rem 0.9rem; font-size: 0.96rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pine) !important; opacity: 0.9 !important; text-shadow: none !important; white-space: nowrap; }
