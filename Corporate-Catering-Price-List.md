@@ -22,8 +22,8 @@
 | Date Scones & Zesty Orange Butter | $7.00 | v | |
 | Orange & Almond Mini Cakes | $5.50 | v · gf | |
 | Blueberry & Cream Cheese Muffins | $6.00 | v | |
-| Tomato & Feta Frittata | $5.50 | v · gf | |
-| Bacon & Cheddar Frittata | $5.50 | gf | |
+| Tomato & Feta Frittata | $5.50 | v · gf | Tomato jam |
+| Bacon & Cheddar Frittata | $5.50 | gf | Grated parmesan |
 | Pork & Fennel Sausage Roll | $5.50 | | Apple jam |
 | Greek Lamb & Feta Sausage Roll | $5.50 | | Minted yoghurt |
 | Curry Lentil & Cashew Sausage Roll | $5.50 | v | Mango & chilli chutney |
