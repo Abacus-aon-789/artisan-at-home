@@ -9,12 +9,12 @@ const CAKE_SIZES = [
   { label: "Slab (serves 15–20)", price: 130 }
 ];
 const INDIVIDUAL_SALADS = [
+  { label: "Harissa eggplant", price: 14.5 },
   { label: "Mediterranean Potato Salad", price: 14.5 },
   { label: "Cauliflower Power", price: 14.5 },
   { label: "The Big Green Bowl", price: 14.5 },
   { label: "Bring the Beet Back", price: 14.5 },
-  { label: "Classic Caesar", price: 14.5 },
-  { label: "The Kimchi Kick", price: 14.5 }
+  { label: "Classic Caesar", price: 14.5 }
 ];
 
 const MENU = [
@@ -66,16 +66,16 @@ const MENU = [
     ]
   },
   {
-    cat: "Winter Salads",
+    cat: "Spring Salads",
     note: "Our portion sizes are designed to be enjoyed as a side.",
     groups: [
       { options: [
+        { name: "Harissa eggplant", desc: "Herby tabbouleh, pickled onions & pumpkin seeds", tags: "vg", variants: SALAD_SIZES },
         { name: "Mediterranean Potato Salad", desc: "Olive & caper, lemon & herby olive oil dressing", tags: "vg · gf", variants: SALAD_SIZES },
         { name: "Cauliflower Power", desc: "Curry leaf & cumin roasted cauliflower & chickpea, toasted almonds, ginger coconut dressing", tags: "vg · gf", variants: SALAD_SIZES },
         { name: "The Big Green Bowl", desc: "Citrusy zucchini, broccoli rice (stems and all), our house sauerkraut, rocket & toasted pumpkin seeds", tags: "vg · gf", variants: SALAD_SIZES },
         { name: "Bring the Beet Back", desc: "Roasted beetroot & carrot, pomegranate, feta, toasted walnuts & balsamic dressing", tags: "v · gf", variants: SALAD_SIZES },
         { name: "Classic Caesar", desc: "Baby cos, pancetta, parmesan, anchovies, rosemary croutons", variants: SALAD_SIZES },
-        { name: "The Kimchi Kick", desc: "Kimchi & sesame cucumber brown rice, charred broccoli, edamame & fermented chilli dressing", tags: "vg · gf", variants: SALAD_SIZES },
         { name: "Individual Salad", desc: "Minimum order of 8 of each type", min: 8, variants: INDIVIDUAL_SALADS }
       ]}
     ]
@@ -85,12 +85,10 @@ const MENU = [
     note: "Flavour packed Turkish Pide bread sandwiches, arrive sliced in half unless otherwise requested. Min order of 6 of each variety.",
     groups: [
       { options: [
-        { name: "Pastrami & Sauerkraut", img: "/images/cat-sandwiches.jpg", desc: "Our house-made sauerkraut, horseradish mayo & shredded iceberg", price: 16.5, min: 6, special: true, badge: "Seasonal Special" },
-        { name: "Smoked Salmon & Lemon Caper Cream Cheese", desc: "Salmon we smoke ourselves, our pickled cucumber & red onion", price: 16.5, min: 6 },
+        { name: "Smoked Salmon & Lemon Caper Cream Cheese", img: "/images/cat-sandwiches.jpg", desc: "Salmon we smoke ourselves, our pickled cucumber & red onion", price: 16.5, min: 6 },
         { name: "Chicken & Maple Glazed Pancetta", desc: "Basil pesto & rocket", price: 16.5, min: 6 },
-        { name: "Honey Glazed Ham & Dill Pickle", desc: "Mustard, lettuce & fresh apple", price: 16.5, min: 6 },
+        { name: "Honey Ham & Dill Pickle", desc: "Mustard, lettuce & fresh apple", price: 16.5, min: 6 },
         { name: "Whipped Feta, Rocket & Fig Chutney", desc: "Pickled red onions, walnuts & thyme", price: 16.5, min: 6, tags: "v" },
-        { name: "Kim-cheese & Sesame Egg Mayo", desc: "Chives & gem lettuce", price: 16.5, min: 6, tags: "v" },
         { name: "Garlic & Herb Mushroom & Mozzarella", desc: "Lemon zucchini ribbon & olive oil", price: 16.5, min: 6, tags: "v" },
         { name: "Harissa Grilled Eggplant & Cashew Ricotta", desc: "Caramelised onion jam & dukkah", price: 16.5, min: 6, tags: "vg" }
       ]}
@@ -107,20 +105,6 @@ const MENU = [
         { name: "Millionaire's White Chocolate & Raspberry", price: 5, min: 8, tags: "v" },
         { name: "Lemon & Coconut Baklava", price: 5, min: 8, tags: "vg" },
         { name: "Sweet Bites Selection — 50 bites", desc: "A mixed selection of our sweet bites (50 pieces)", price: 190 }
-      ]}
-    ]
-  },
-  {
-    cat: "Whole Cakes",
-    note: "Choose your flavour and size.",
-    groups: [
-      { options: [
-        { name: "Hummingbird & Salted Caramel", img: "/images/cat-cakes.jpg", tags: "v", variants: CAKE_SIZES },
-        { name: "Orange & Almond", tags: "v · gf", variants: CAKE_SIZES },
-        { name: "Raspberry & Vanilla Burnt Butter", tags: "v", variants: CAKE_SIZES },
-        { name: "Lemon Meringue", tags: "v", variants: CAKE_SIZES },
-        { name: "Tropical Mango & Lime", tags: "v", variants: CAKE_SIZES },
-        { name: "Chocolate & Hazelnut", tags: "v", variants: CAKE_SIZES }
       ]}
     ]
   },

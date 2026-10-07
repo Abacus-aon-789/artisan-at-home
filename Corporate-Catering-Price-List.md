@@ -1,4 +1,4 @@
-# Artisan at Home — Corporate Catering Price List
+# Artisan at Home — Delivered Catering Price List
 
 *Reference for quoting. All prices in NZD. Last updated: 23 August 2026.*
 
@@ -52,33 +52,31 @@
 | Mushroom & Brie Frittata | $127.00 | v · gf | |
 | Bacon & Cheddar Frittata | $127.00 | gf | |
 
-## Winter Salads
+## Spring Salads
 *Portion sizes are designed to be enjoyed as a side.*
 
 **Shared sizes:** Small (serves 6–8) **$50.00** · Medium (serves 15–20) **$92.00** · Large (serves 25–35) **$175.00**
 
 | Salad | Dietary | Notes |
 |---|---|---|
+| Harissa eggplant | vg | Herby tabbouleh, pickled onions & pumpkin seeds |
 | Mediterranean Potato Salad | vg · gf | Olive & caper, lemon & herby olive oil dressing |
 | Cauliflower Power | vg · gf | Curry leaf & cumin roasted cauliflower & chickpea, toasted almonds, ginger coconut dressing |
 | The Big Green Bowl | vg · gf | Citrusy zucchini, broccoli rice (stems and all), house sauerkraut, rocket & toasted pumpkin seeds |
 | Bring the Beet Back | v · gf | Roasted beetroot & carrot, pomegranate, feta, toasted walnuts & balsamic dressing |
 | Classic Caesar | | Baby cos, pancetta, parmesan, anchovies, rosemary croutons |
-| The Kimchi Kick | vg · gf | Kimchi & sesame cucumber brown rice, charred broccoli, edamame & fermented chilli dressing |
 
-**Individual Salads** — **$14.50 each** (minimum order 8 of each type). Available in: Mediterranean Potato Salad, Cauliflower Power, The Big Green Bowl, Bring the Beet Back, Classic Caesar, The Kimchi Kick.
+**Individual Salads** — **$14.50 each** (minimum order 8 of each type). Available in: Harissa eggplant, Mediterranean Potato Salad, Cauliflower Power, The Big Green Bowl, Bring the Beet Back, Classic Caesar.
 
 ## Gourmet Sandwiches
 *Flavour-packed Turkish Pide bread sandwiches, arrive sliced in half unless otherwise requested. Minimum order 6 of each variety. All **$16.50 each**.*
 
 | Item | Price | Dietary | Notes |
 |---|---|---|---|
-| Pastrami & Sauerkraut *(Seasonal Special)* | $16.50 | | House-made sauerkraut, horseradish mayo & shredded iceberg |
 | Smoked Salmon & Lemon Caper Cream Cheese | $16.50 | | Salmon we smoke ourselves, pickled cucumber & red onion |
 | Chicken & Maple Glazed Pancetta | $16.50 | | Basil pesto & rocket |
-| Honey Glazed Ham & Dill Pickle | $16.50 | | Mustard, lettuce & fresh apple |
+| Honey Ham & Dill Pickle | $16.50 | | Mustard, lettuce & fresh apple |
 | Whipped Feta, Rocket & Fig Chutney | $16.50 | v | Pickled red onions, walnuts & thyme |
-| Kim-cheese & Sesame Egg Mayo | $16.50 | v | Chives & gem lettuce |
 | Garlic & Herb Mushroom & Mozzarella | $16.50 | v | Lemon zucchini ribbon & olive oil |
 | Harissa Grilled Eggplant & Cashew Ricotta | $16.50 | vg | Caramelised onion jam & dukkah |
 
@@ -93,20 +91,6 @@
 | Millionaire's White Chocolate & Raspberry | $5.00 | v |
 | Lemon & Coconut Baklava | $5.00 | vg |
 | Sweet Bites Selection — 50 bites | $190.00 | | A mixed selection (50 pieces) |
-
-## Whole Cakes
-*Choose your flavour and size.*
-
-**Shared sizes:** Mini (serves 2–4) **$50.00** · Midi (serves 8–12) **$105.00** · Slab (serves 15–20) **$130.00**
-
-| Cake | Dietary |
-|---|---|
-| Hummingbird & Salted Caramel | v |
-| Orange & Almond | v · gf |
-| Raspberry & Vanilla Burnt Butter | v |
-| Lemon Meringue | v |
-| Tropical Mango & Lime | v |
-| Chocolate & Hazelnut | v |
 
 ## Extras
 *Finishing touches.*
