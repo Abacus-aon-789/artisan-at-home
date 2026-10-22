@@ -3,14 +3,14 @@ const SALAD_SIZES = [
   { label: "Medium (serves 15–20)", price: 92 },
   { label: "Large (serves 25–35)", price: 175 }
 ];
-const CAKE_SIZES = [
-  { label: "Mini (serves 2–4)", price: 50 },
-  { label: "Midi (serves 8–12)", price: 105 },
-  { label: "Slab (serves 15–20)", price: 130 }
+const QUICHE_FRITTATA = [
+  { label: "Quiche", price: 127 },
+  { label: "Frittata (GF)", price: 135 }
 ];
 const INDIVIDUAL_SALADS = [
   { label: "Harissa eggplant", price: 14.5 },
-  { label: "Mediterranean Potato Salad", price: 14.5 },
+  { label: "Piccolo Potato Salad", price: 14.5 },
+  { label: "Roasted Purple Kumara & Corn", price: 14.5 },
   { label: "Cauliflower Power", price: 14.5 },
   { label: "The Big Green Bowl", price: 14.5 },
   { label: "Bring the Beet Back", price: 14.5 },
@@ -30,11 +30,8 @@ const MENU = [
         { name: "Tomato & Feta Frittata", desc: "Tomato jam", price: 5.5, min: 8, tags: "v · gf" },
         { name: "Bacon & Cheddar Frittata", desc: "Grated parmesan", price: 5.5, min: 8, tags: "gf" },
         { name: "Pork & Fennel Sausage Roll", desc: "Apple jam", price: 5.5, min: 8 },
-        { name: "Greek Lamb & Feta Sausage Roll", desc: "Minted yoghurt", price: 5.5, min: 8 },
-        { name: "Curry Lentil & Cashew Sausage Roll", desc: "Mango & chilli chutney", price: 5.5, min: 8, tags: "v" },
-        { name: "Reuben Pastie", desc: "Pastrami, sauerkraut & Swiss cheese, Thousand Island dressing", price: 5.5, min: 8 },
-        { name: "Mexi Chicken Pastie", desc: "Fajita chicken, cheese, jalapeño & chipotle sour cream", price: 5.5, min: 8 },
-        { name: "Cheesy Leek & Potato Pastie", desc: "Onion marmalade", price: 5.5, min: 8, tags: "v" }
+        { name: "Moroccan Lamb & Feta Sausage Roll", desc: "Minted yoghurt", price: 5.5, min: 8 },
+        { name: "Rosemary & Thyme Sausage Rolls", price: 6.25, min: 8, tags: "v" }
       ]}
     ]
   },
@@ -56,12 +53,10 @@ const MENU = [
     note: "Serves 12 · arrive pre-sliced unless otherwise requested.",
     groups: [
       { options: [
-        { name: "Quiche Lorraine", price: 127 },
-        { name: "Smoked Salmon & Leek Quiche", desc: "House-smoked salmon", price: 127 },
-        { name: "Broccoli & Blue Cheese Quiche", price: 127, tags: "v" },
-        { name: "Tomato & Feta Frittata", desc: "With our house-made tomato jam", price: 127, tags: "v · gf" },
-        { name: "Mushroom & Brie Frittata", price: 127, tags: "v · gf" },
-        { name: "Bacon & Cheddar Frittata", price: 127, tags: "gf" }
+        { name: "Smoked Salmon & Leek", desc: "House-smoked salmon", variants: QUICHE_FRITTATA },
+        { name: "Tomato & Feta", desc: "House-made tomato jam", tags: "v", variants: QUICHE_FRITTATA },
+        { name: "Summer Roasted Vegetables", tags: "v", variants: QUICHE_FRITTATA },
+        { name: "Bacon & Cheddar", variants: QUICHE_FRITTATA }
       ]}
     ]
   },
@@ -70,8 +65,9 @@ const MENU = [
     note: "Our portion sizes are designed to be enjoyed as a side.",
     groups: [
       { options: [
-        { name: "Harissa eggplant", desc: "Herby tabbouleh, pickled onions & pumpkin seeds", tags: "vg", variants: SALAD_SIZES },
-        { name: "Mediterranean Potato Salad", desc: "Olive & caper, lemon & herby olive oil dressing", tags: "vg · gf", variants: SALAD_SIZES },
+        { name: "Harissa eggplant", desc: "Marinated harissa eggplant, herby tabbouleh, pickled onion & toasted pumpkin seeds", tags: "vg", variants: SALAD_SIZES },
+        { name: "Piccolo Potato Salad", desc: "Rustic olive & caper tapenade, lemon & olive oil dressing", tags: "vg · gf", variants: SALAD_SIZES },
+        { name: "Roasted Purple Kumara & Corn", desc: "Quinoa, sauerkraut & avocado", tags: "vg · gf", variants: SALAD_SIZES },
         { name: "Cauliflower Power", desc: "Curry leaf & cumin roasted cauliflower & chickpea, toasted almonds, ginger coconut dressing", tags: "vg · gf", variants: SALAD_SIZES },
         { name: "The Big Green Bowl", desc: "Citrusy zucchini, broccoli rice (stems and all), our house sauerkraut, rocket & toasted pumpkin seeds", tags: "vg · gf", variants: SALAD_SIZES },
         { name: "Bring the Beet Back", desc: "Roasted beetroot & carrot, pomegranate, feta, toasted walnuts & balsamic dressing", tags: "v · gf", variants: SALAD_SIZES },
@@ -96,15 +92,14 @@ const MENU = [
   },
   {
     cat: "Sweet Bites",
-    note: "Minimum 8 of each type, or grab a mixed selection.",
+    note: "Minimum 8 of each type.",
     groups: [
       { options: [
-        { name: "Burnt Butter & Banana Blondie", img: "/images/cat-sweet-bites.jpg", price: 5, min: 8, tags: "v" },
+        { name: "Brown Butter Blondies", img: "/images/cat-sweet-bites.jpg", price: 5, min: 8, tags: "v" },
         { name: "Dark Chocolate & Sea Salt Brownie", price: 5, min: 8, tags: "vg" },
         { name: "Apricot & Chocolate Crumble Slice", price: 5, min: 8, tags: "v" },
         { name: "Millionaire's White Chocolate & Raspberry", price: 5, min: 8, tags: "v" },
-        { name: "Lemon & Coconut Baklava", price: 5, min: 8, tags: "vg" },
-        { name: "Sweet Bites Selection — 50 bites", desc: "A mixed selection of our sweet bites (50 pieces)", price: 190 }
+        { name: "Lemon & Coconut Baklava", price: 5, min: 8, tags: "vg" }
       ]}
     ]
   },
@@ -126,5 +121,5 @@ const MENU = [
 ];
 
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { MENU: MENU, SALAD_SIZES: SALAD_SIZES, CAKE_SIZES: CAKE_SIZES, INDIVIDUAL_SALADS: INDIVIDUAL_SALADS };
+  module.exports = { MENU: MENU, SALAD_SIZES: SALAD_SIZES, QUICHE_FRITTATA: QUICHE_FRITTATA, INDIVIDUAL_SALADS: INDIVIDUAL_SALADS };
 }

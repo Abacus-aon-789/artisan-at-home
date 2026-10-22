@@ -1,6 +1,6 @@
 # Artisan at Home — Delivered Catering Price List
 
-*Reference for quoting. All prices in NZD. Last updated: 23 August 2026.*
+*Reference for quoting. All prices in NZD. Last updated: 22 October 2026.*
 
 ## Ordering terms
 
@@ -25,11 +25,8 @@
 | Tomato & Feta Frittata | $5.50 | v · gf | Tomato jam |
 | Bacon & Cheddar Frittata | $5.50 | gf | Grated parmesan |
 | Pork & Fennel Sausage Roll | $5.50 | | Apple jam |
-| Greek Lamb & Feta Sausage Roll | $5.50 | | Minted yoghurt |
-| Curry Lentil & Cashew Sausage Roll | $5.50 | v | Mango & chilli chutney |
-| Reuben Pastie | $5.50 | | Pastrami, sauerkraut & Swiss cheese, Thousand Island dressing |
-| Mexi Chicken Pastie | $5.50 | | Fajita chicken, cheese, jalapeño & chipotle sour cream |
-| Cheesy Leek & Potato Pastie | $5.50 | v | Onion marmalade |
+| Moroccan Lamb & Feta Sausage Roll | $5.50 | | Minted yoghurt |
+| Rosemary & Thyme Sausage Rolls | $6.25 | v | |
 
 ## Fresh & Fruity
 
@@ -41,16 +38,14 @@
 | Fruit Skewers | $5.50 | v | Minimum order 20 |
 
 ## Whole Quiche & Frittatas
-*Each serves 12 · arrive pre-sliced unless otherwise requested.*
+*Each serves 12 · arrive pre-sliced unless otherwise requested. Each flavour is available as a **Quiche ($127)** or **Frittata ($135, gluten-free)**.*
 
-| Item | Price | Dietary | Notes |
-|---|---|---|---|
-| Quiche Lorraine | $127.00 | | |
-| Smoked Salmon & Leek Quiche | $127.00 | | House-smoked salmon |
-| Broccoli & Blue Cheese Quiche | $127.00 | v | |
-| Tomato & Feta Frittata | $127.00 | v · gf | House-made tomato jam |
-| Mushroom & Brie Frittata | $127.00 | v · gf | |
-| Bacon & Cheddar Frittata | $127.00 | gf | |
+| Flavour | Dietary | Notes |
+|---|---|---|
+| Smoked Salmon & Leek | | House-smoked salmon |
+| Tomato & Feta | v | House-made tomato jam |
+| Summer Roasted Vegetables | v | |
+| Bacon & Cheddar | | |
 
 ## Spring Salads
 *Portion sizes are designed to be enjoyed as a side.*
@@ -59,14 +54,15 @@
 
 | Salad | Dietary | Notes |
 |---|---|---|
-| Harissa eggplant | vg | Herby tabbouleh, pickled onions & pumpkin seeds |
-| Mediterranean Potato Salad | vg · gf | Olive & caper, lemon & herby olive oil dressing |
+| Harissa eggplant | vg | Marinated harissa eggplant, herby tabbouleh, pickled onion & toasted pumpkin seeds |
+| Piccolo Potato Salad | vg · gf | Rustic olive & caper tapenade, lemon & olive oil dressing |
+| Roasted Purple Kumara & Corn | vg · gf | Quinoa, sauerkraut & avocado |
 | Cauliflower Power | vg · gf | Curry leaf & cumin roasted cauliflower & chickpea, toasted almonds, ginger coconut dressing |
 | The Big Green Bowl | vg · gf | Citrusy zucchini, broccoli rice (stems and all), house sauerkraut, rocket & toasted pumpkin seeds |
 | Bring the Beet Back | v · gf | Roasted beetroot & carrot, pomegranate, feta, toasted walnuts & balsamic dressing |
 | Classic Caesar | | Baby cos, pancetta, parmesan, anchovies, rosemary croutons |
 
-**Individual Salads** — **$14.50 each** (minimum order 8 of each type). Available in: Harissa eggplant, Mediterranean Potato Salad, Cauliflower Power, The Big Green Bowl, Bring the Beet Back, Classic Caesar.
+**Individual Salads** — **$14.50 each** (minimum order 8 of each type). Available in: Harissa eggplant, Piccolo Potato Salad, Roasted Purple Kumara & Corn, Cauliflower Power, The Big Green Bowl, Bring the Beet Back, Classic Caesar.
 
 ## Gourmet Sandwiches
 *Flavour-packed Turkish Pide bread sandwiches, arrive sliced in half unless otherwise requested. Minimum order 6 of each variety. All **$16.50 each**.*
@@ -81,16 +77,15 @@
 | Harissa Grilled Eggplant & Cashew Ricotta | $16.50 | vg | Caramelised onion jam & dukkah |
 
 ## Sweet Bites
-*Minimum 8 of each type, or grab a mixed selection.*
+*Minimum 8 of each type.*
 
 | Item | Price | Dietary |
 |---|---|---|
-| Burnt Butter & Banana Blondie | $5.00 | v |
+| Brown Butter Blondies | $5.00 | v |
 | Dark Chocolate & Sea Salt Brownie | $5.00 | vg |
 | Apricot & Chocolate Crumble Slice | $5.00 | v |
 | Millionaire's White Chocolate & Raspberry | $5.00 | v |
 | Lemon & Coconut Baklava | $5.00 | vg |
-| Sweet Bites Selection — 50 bites | $190.00 | | A mixed selection (50 pieces) |
 
 ## Extras
 *Finishing touches.*
