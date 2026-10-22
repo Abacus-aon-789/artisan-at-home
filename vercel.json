@@ -7,7 +7,8 @@
     { "source": "/corporate-catering", "destination": "/services/corporate-catering/", "permanent": true },
     { "source": "/services/services-private-chef", "destination": "/services/private-chef/", "permanent": true },
     { "source": "/kitchen-hero", "destination": "/contact-us/", "permanent": false },
-    { "source": "/home-page", "destination": "/", "permanent": true }
+    { "source": "/home-page", "destination": "/", "permanent": true },
+    { "source": "/faqs", "destination": "/", "permanent": true }
   ],
   "headers": [
     {
