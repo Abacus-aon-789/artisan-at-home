@@ -1,5 +1,18 @@
 // Artisan at Home — shared interactions
 
+// Clear any leftover service worker / cache from the old website, so returning
+// visitors (and saved bookmarks) always load the current site, not a stale copy.
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.getRegistrations().then(function (regs) {
+    regs.forEach(function (r) { r.unregister(); });
+  }).catch(function () {});
+}
+if (window.caches && caches.keys) {
+  caches.keys().then(function (keys) {
+    keys.forEach(function (k) { caches.delete(k); });
+  }).catch(function () {});
+}
+
 // Mobile navigation
 const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".nav");
@@ -82,3 +95,41 @@ document.querySelectorAll('form.form[action*="formspree.io"]').forEach(function 
       });
   });
 });
+
+/* First-year announcement — shows up to twice per visitor, then never again */
+(function () {
+  var KEY = "aah_notice_delivered";
+  var count = 0;
+  try { count = parseInt(localStorage.getItem(KEY) || "0", 10) || 0; } catch (e) { return; }
+  if (count >= 2) return;
+  try { localStorage.setItem(KEY, String(count + 1)); } catch (e) {}
+
+  function showNotice() {
+    if (document.getElementById("aah-notice")) return;
+    var overlay = document.createElement("div");
+    overlay.id = "aah-notice";
+    overlay.className = "aah-notice-overlay";
+    overlay.innerHTML =
+      '<div class="aah-notice" role="dialog" aria-modal="true" aria-labelledby="aah-notice-title">' +
+        '<button class="aah-notice-x" aria-label="Close">&times;</button>' +
+        '<p class="aah-notice-eyebrow">A note from us</p>' +
+        '<h2 class="aah-notice-title" id="aah-notice-title">Thank you</h2>' +
+        '<p class="aah-notice-body">Thank you for all your support through our first year in business. ' +
+        'Due to ongoing demand, we&rsquo;ve made the decision to step back from our delivered catering, so we can pour our energy into what we love most &mdash; ' +
+        'private dining, events and weddings. That said, if you&rsquo;ve a special event you&rsquo;d love us to cater, do still reach out &mdash; if we can make it work, we shall!</p>' +
+        '<p class="aah-notice-sign">Abi &amp; Jake</p>' +
+      '</div>';
+    document.body.appendChild(overlay);
+    function close() { if (overlay && overlay.parentNode) overlay.parentNode.removeChild(overlay); }
+    overlay.querySelector(".aah-notice-x").addEventListener("click", close);
+    overlay.addEventListener("click", function (e) { if (e.target === overlay) close(); });
+    document.addEventListener("keydown", function esc(e) { if (e.key === "Escape") { close(); document.removeEventListener("keydown", esc); } });
+    requestAnimationFrame(function () { overlay.classList.add("open"); });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () { setTimeout(showNotice, 900); });
+  } else {
+    setTimeout(showNotice, 900);
+  }
+})();

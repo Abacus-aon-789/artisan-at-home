@@ -4,11 +4,13 @@
   "redirects": [
     { "source": "/private-chef", "destination": "/services/private-chef/", "permanent": true },
     { "source": "/event-catering", "destination": "/services/event-catering/", "permanent": true },
-    { "source": "/corporate-catering", "destination": "/services/corporate-catering/", "permanent": true },
+    { "source": "/corporate-catering", "destination": "/", "permanent": true },
     { "source": "/services/services-private-chef", "destination": "/services/private-chef/", "permanent": true },
     { "source": "/kitchen-hero", "destination": "/contact-us/", "permanent": false },
     { "source": "/home-page", "destination": "/", "permanent": true },
-    { "source": "/faqs", "destination": "/", "permanent": true }
+    { "source": "/faqs", "destination": "/", "permanent": true },
+    { "source": "/services/corporate-catering/order", "destination": "/", "permanent": true },
+    { "source": "/services/corporate-catering", "destination": "/", "permanent": true }
   ],
   "headers": [
     {
