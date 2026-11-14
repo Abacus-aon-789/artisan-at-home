@@ -98,11 +98,20 @@ document.querySelectorAll('form.form[action*="formspree.io"]').forEach(function 
 
 /* First-year announcement — shows up to twice per visitor, then never again */
 (function () {
-  var KEY = "aah_notice_delivered";
-  var count = 0;
-  try { count = parseInt(localStorage.getItem(KEY) || "0", 10) || 0; } catch (e) { return; }
-  if (count >= 2) return;
-  try { localStorage.setItem(KEY, String(count + 1)); } catch (e) {}
+  var COUNT_KEY = "aah_notice_count";
+  var DAY_KEY = "aah_notice_day";
+  var count, lastDay, today;
+  try {
+    count = parseInt(localStorage.getItem(COUNT_KEY) || "0", 10) || 0;
+    lastDay = localStorage.getItem(DAY_KEY) || "";
+    today = new Date().toISOString().slice(0, 10);
+  } catch (e) { return; }
+  if (count >= 2) return;         // already shown on 2 separate days — never again
+  if (lastDay === today) return;  // already shown today — not again until another day
+  try {
+    localStorage.setItem(COUNT_KEY, String(count + 1));
+    localStorage.setItem(DAY_KEY, today);
+  } catch (e) {}
 
   function showNotice() {
     if (document.getElementById("aah-notice")) return;
@@ -114,7 +123,7 @@ document.querySelectorAll('form.form[action*="formspree.io"]').forEach(function 
         '<button class="aah-notice-x" aria-label="Close">&times;</button>' +
         '<p class="aah-notice-eyebrow">A note from us</p>' +
         '<h2 class="aah-notice-title" id="aah-notice-title">Thank you</h2>' +
-        '<p class="aah-notice-body">Thank you for all your support through our first year in business. ' +
+        '<p class="aah-notice-body">' +
         'Due to ongoing demand, we&rsquo;ve made the decision to step back from our delivered catering, so we can pour our energy into what we love most &mdash; ' +
         'private dining, events and weddings. That said, if you&rsquo;ve a special event you&rsquo;d love us to cater, do still reach out &mdash; if we can make it work, we shall!</p>' +
         '<p class="aah-notice-sign">Abi &amp; Jake</p>' +
