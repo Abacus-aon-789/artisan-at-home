@@ -37,25 +37,23 @@
 .xmas-menu-col .xmas-menu-img { width: auto; max-width: 100%; max-height: 680px; margin: 0 auto; }
 .wed-text-note { text-align: center; margin: 1.6rem auto 0; max-width: 44rem; color: rgba(34,40,31,0.72); }
 .wed-text-note a { color: var(--honey); font-weight: 700; }
-/* cream background + translucent festive wreaths framing the page */
+/* cream background + festive pine garland down both sides */
 body.page-white { background: var(--cream); }
-main#content { position: relative; z-index: 1; }
-.xmas-decor { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-.xmas-decor img { position: absolute; width: min(30vw, 330px); height: auto; opacity: 0.4; }
-.xmas-decor .xd-tl { top: -6%; left: -7%; transform: rotate(-6deg); }
-.xmas-decor .xd-tr { top: -6%; right: -7%; transform: rotate(6deg); }
-.xmas-decor .xd-bl { bottom: -6%; left: -7%; transform: rotate(8deg); }
-.xmas-decor .xd-br { bottom: -6%; right: -7%; transform: rotate(-8deg); }
-@media (max-width: 820px) { .xmas-decor img { width: 48vw; opacity: 0.26; } .xmas-decor .xd-tr, .xmas-decor .xd-bl { display: none; } }
+main#content { position: relative; z-index: 1; padding-left: calc(var(--gw) + 10px); padding-right: calc(var(--gw) + 10px); }
+.site-footer { position: relative; z-index: 2; }
+:root { --gw: clamp(84px, 12vw, 150px); }
+.xmas-decor { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+.xmas-decor .xg { position: fixed; top: 0; bottom: 0; width: var(--gw); background-repeat: repeat-y; background-size: 100% auto; }
+.xmas-decor .xg-left { left: 0; background-image: url('/images/garland-left.png'); }
+.xmas-decor .xg-right { right: 0; background-image: url('/images/garland-right.png'); }
+@media (max-width: 820px) { :root { --gw: 54px; } }
 </style>
 </head>
 <body class="page-white">
 <a class="skip-link" href="#content">Skip to content</a>
 <div class="xmas-decor" aria-hidden="true">
-  <img class="xd-tl" src="/images/wreath-festive.png" alt="">
-  <img class="xd-tr" src="/images/wreath-festive.png" alt="">
-  <img class="xd-bl" src="/images/wreath-festive.png" alt="">
-  <img class="xd-br" src="/images/wreath-festive.png" alt="">
+  <span class="xg xg-left"></span>
+  <span class="xg xg-right"></span>
 </div>
 <nav class="hero-nav hero-nav--bar" aria-label="Primary">
   <div class="hn-group">
