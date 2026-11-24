@@ -74,7 +74,7 @@ try {
     </span>
     <a href="/menus/">Menus</a>
   </div>
-  <a class="hn-logo" href="/" aria-label="Artisan at Home — home"><img src="/images/logo-mark.png" alt="Artisan at Home"></a>
+  <a class="hn-logo" href="/" aria-label="Artisan at Home — home"><img src="/images/logo-mark-xmas.png" alt="Artisan at Home"></a>
   <div class="hn-group">
     <a href="/our-story/">Our Story</a>
     <a href="/contact-us/">Contact Us</a>
@@ -156,11 +156,13 @@ try {
   var panels = hero.querySelector('.hr-panels');
   var nav = document.querySelector('.hero-nav');
   var bar = document.querySelector('.xmas-bar');
+  function placeBar() { if (nav && bar) bar.style.marginTop = nav.offsetHeight + 'px'; }
+  placeBar();
+  window.addEventListener('resize', placeBar);
   var logoGone = document.documentElement.classList.contains('intro-seen');
   function onScroll() {
     var total = hero.offsetHeight - window.innerHeight;
     var prog = total > 0 ? Math.min(1, Math.max(0, -hero.getBoundingClientRect().top / total)) : 0;
-    if (nav && bar) { nav.classList.toggle('is-light', bar.getBoundingClientRect().bottom > 12); }
     if (prog >= 1) logoGone = true;
     if (logoGone) {
       panels.style.opacity = 1;
