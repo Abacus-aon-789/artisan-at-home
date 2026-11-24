@@ -95,6 +95,8 @@ try {
 </div>
 <main id="content">
 
+<a class="xmas-bar" href="/christmas-catering/#festive-menu">A few weekend dates remaining for Christmas bookings &mdash; if you're planning a festive dinner, long lunch or party, <span class="xmas-link">take a look at our Christmas menu &rsaquo;</span></a>
+
 <section class="hero-reveal" id="hero-reveal">
   <h1 class="visually-hidden">Artisan at Home — private chef &amp; catering, Auckland &amp; Northland</h1>
   <div class="hr-stage">
@@ -110,8 +112,6 @@ try {
     <span class="scroll-cue">Scroll</span>
   </div>
 </section>
-
-<a href="/christmas-catering/" style="display:block;text-decoration:none;background:var(--pine);color:var(--cream);text-align:center;padding:0.85rem 1.2rem;font-family:'Playfair Display',serif;font-size:clamp(1rem,2.6vw,1.2rem);letter-spacing:0.01em;">Now taking Christmas bookings &mdash; festive dinners, long lunches &amp; parties across Auckland. <span style="text-decoration:underline;white-space:nowrap;">Plan yours &rsaquo;</span></a>
 
 <section class="section intro-letter">
   <div class="wrap">
@@ -155,10 +155,12 @@ try {
   var cue = hero.querySelector('.scroll-cue');
   var panels = hero.querySelector('.hr-panels');
   var nav = document.querySelector('.hero-nav');
+  var bar = document.querySelector('.xmas-bar');
   var logoGone = document.documentElement.classList.contains('intro-seen');
   function onScroll() {
     var total = hero.offsetHeight - window.innerHeight;
     var prog = total > 0 ? Math.min(1, Math.max(0, -hero.getBoundingClientRect().top / total)) : 0;
+    if (nav && bar) { nav.classList.toggle('is-light', bar.getBoundingClientRect().bottom > 12); }
     if (prog >= 1) logoGone = true;
     if (logoGone) {
       panels.style.opacity = 1;
