@@ -39,14 +39,14 @@
 .wed-text-note a { color: var(--honey); font-weight: 700; }
 /* cream background + festive pine garland down both sides */
 body.page-white { background: var(--cream); }
-main#content { position: relative; z-index: 1; padding-left: calc(var(--gw) + 10px); padding-right: calc(var(--gw) + 10px); }
+main#content { position: relative; z-index: 1; padding-left: var(--cpad); padding-right: var(--cpad); }
 .site-footer { position: relative; z-index: 2; }
-:root { --gw: clamp(84px, 12vw, 150px); }
+:root { --gw: clamp(210px, 28vw, 370px); --cpad: clamp(72px, 12vw, 150px); }
 .xmas-decor { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
-.xmas-decor .xg { position: fixed; top: 0; bottom: 0; width: var(--gw); background-repeat: repeat-y; background-size: 100% auto; }
+.xmas-decor .xg { position: fixed; top: 0; bottom: 0; width: var(--gw); background-repeat: repeat-y; background-size: 100% auto; opacity: 0.45; }
 .xmas-decor .xg-left { left: 0; background-image: url('/images/garland-left.png'); }
 .xmas-decor .xg-right { right: 0; background-image: url('/images/garland-right.png'); }
-@media (max-width: 820px) { :root { --gw: 54px; } }
+@media (max-width: 820px) { :root { --gw: 135px; --cpad: 22px; } .xmas-decor .xg { opacity: 0.32; } }
 </style>
 </head>
 <body class="page-white">
