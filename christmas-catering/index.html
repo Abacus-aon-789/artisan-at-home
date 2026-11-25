@@ -16,7 +16,7 @@
 <link rel="icon" type="image/png" href="/images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Cormorant+Garamond:wght@500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Cormorant+Garamond:wght@500;600;700&family=Playfair+Display:wght@500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Service","name":"Christmas Catering","serviceType":"Christmas and festive catering, private chef","url":"https://artisanathome.nz/christmas-catering/","areaServed":["Auckland","Northland"],"provider":{"@type":"LocalBusiness","@id":"https://artisanathome.nz/#business","name":"Artisan at Home","telephone":"+64275723373","email":"hello@artisanathome.nz"}}
@@ -34,7 +34,8 @@
 .pc-intro-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 @media (max-width: 820px) { .pc-intro-grid { grid-template-columns: 1fr; } .pc-intro-photo { order: -1; min-height: 280px; aspect-ratio: 4 / 3; } }
 .xmas-menu-col { text-align: center; }
-.xmas-menu-col .xmas-menu-img { width: auto; max-width: 100%; max-height: 680px; margin: 0 auto; }
+.xmas-menu-col .xmas-menu-img { width: auto; max-width: 100%; max-height: 680px; margin: 0 auto; border: 1px solid rgba(47,74,47,0.12); }
+.xmas-script { display: block; font-family: 'Caveat', cursive; font-weight: 600; font-size: clamp(1.5rem, 3vw, 2rem); color: #a81f33; line-height: 1; letter-spacing: 0.01em; margin-bottom: 0.2rem; }
 .wed-text-note { text-align: center; margin: 1.6rem auto 0; max-width: 44rem; color: rgba(34,40,31,0.72); }
 .wed-text-note a { color: var(--honey); font-weight: 700; }
 /* cream background + festive pine garland down both sides */
@@ -91,7 +92,8 @@ main#content { position: relative; z-index: 1; padding-left: var(--cpad); paddin
 <section class="pc-intro" id="festive-menu">
   <div class="wrap pc-intro-grid">
     <div class="pc-intro-copy">
-      <h1 class="pc-tagline" style="font-size: clamp(2rem, 4.4vw, 3rem);">Christmas Catering in Auckland</h1>
+      <span class="xmas-script">&rsaquo; 'Tis the season to gather &lsaquo;</span>
+      <h1 class="pc-tagline" style="font-size: clamp(2rem, 4.4vw, 3rem); margin-top: 0.3rem;">Christmas Catering in Auckland</h1>
       <p class="lead">From intimate Christmas dinners to festive long lunches and end-of-year parties, we have our seasonal Christmas menu with the firm favourites and some with a special Artisan at Home twist. We do all the preparation, cooking and clean-up so you can pour the wine, gather your people, and soak up the evening while we take care of the rest!</p>
       <p class="lead">We have a few dates throughout December still available, so your Christmas gatherings can be less stress and more festive fun! We also have a festive menu available as a delivered catering option — just mention this upon enquiry.</p>
       <div class="btn-row">
@@ -99,8 +101,8 @@ main#content { position: relative; z-index: 1; padding-left: var(--cpad); paddin
       </div>
     </div>
     <div class="xmas-menu-col">
-      <img class="xmas-menu-img" src="/images/menus/christmas-sharing-menu.jpg" alt="Artisan at Home Christmas Sharing Menu — canapés to start; a shared table of whisky-glazed ham, Akaroa king salmon, seasonal sides and salads; strawberry and raspberry pavlova to finish" loading="lazy">
-      <p class="xmas-menu-note"><a href="/images/menus/christmas-sharing-menu.pdf" target="_blank" rel="noopener">Download the menu (PDF)</a> &middot; Our menu is seasonal, so the odd dish may change for the best produce. Dietary needs happily catered for &mdash; just let us know.</p>
+      <img class="xmas-menu-img" src="/images/menus/christmas-sharing-menu.jpg" alt="Artisan at Home Christmas Sharing Menu — canapés to start; a shared table of whiskey-glazed ham, Akaroa king salmon, seasonal sides and salads; strawberry and raspberry pavlova to finish" loading="lazy">
+      <p class="xmas-menu-note">Our menu is seasonal, so the odd dish may change for the best produce. Dietary needs happily catered for &mdash; just let us know.</p>
     </div>
   </div>
 </section>
